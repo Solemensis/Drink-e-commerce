@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Quicksand";
+  overflow: hidden;
+  user-select: none;
+}
+
+body {
+  background-image: linear-gradient(to right, #ffecfd80, #ecedff98);
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 78.2% !important;
+  }
+}
+
+/* @font-face {
+  font-family: myFirstFont;
+  src: url(sansation_light.woff);
+} */
+
+/* 
+
+#91dbff7d
+#91c6ff7d;
+#ffecfd98;
+background-color: #ecedff98;
+*/

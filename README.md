@@ -1,2 +1,2 @@
 # drink-e-commerce
- drink-e-commerce
+ A fully functional energy drink e-commerce web app
