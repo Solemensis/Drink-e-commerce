@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: anan;
+  src: url("/fonts/BackToSchoolPersonalUseRegular-w1xX2.ttf");
+}
+
+@font-face {
+  font-family: anan2;
+  src: url("/fonts/Elianto-Regular.ttf");
+}
+
+@font-face {
+  font-family: anan3;
+  src: url("/fonts/Stellar-Medium.otf");
+}
+
 html {
   font-size: 62.5%;
   font-family: "Quicksand";

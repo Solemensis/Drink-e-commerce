@@ -12,6 +12,7 @@ import { ref } from "vue";
 
 const total = ref(0);
 const bool = ref();
+
 const products = ref([
   {
     name: "Melon Tree",
@@ -86,7 +87,7 @@ const products = ref([
     </div>
     <div class="pricing">
       <h3>
-        Total : <span>&nbsp;&nbsp;${{ total }}.00</span>
+        Total : <span>&nbsp;${{ total }}.00</span>
       </h3>
       <!-- <div class="anan">
         <h3>{{ products[0].amount }}</h3>
@@ -128,7 +129,7 @@ const products = ref([
   width: 190rem;
   height: 90.3rem;
   z-index: -99999;
-  animation: float 4s infinite alternate ease;
+  animation: float 4s infinite alternate ease-in-out;
 }
 
 @keyframes float {
@@ -148,14 +149,14 @@ const products = ref([
 }
 
 h3 {
-  font-size: 3.3rem;
+  font-size: 3.9rem;
   font-weight: 300;
 
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.8rem;
   margin-bottom: 3rem;
-  font-family: "Rubik Dirt";
+  font-family: anan3;
 }
 span {
   font-weight: 600;

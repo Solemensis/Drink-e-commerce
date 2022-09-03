@@ -13,18 +13,19 @@ header {
   width: 50rem;
 }
 header h2 {
-  font-size: 6.6rem;
-  font-weight: 600;
+  font-size: 8rem;
+  font-weight: 300;
   margin-bottom: 3rem;
   /*text-align: center;*/
-  font-family: "Rubik Dirt";
+  font-family: anan;
+  line-height: 7.5rem;
 }
 header h1 {
   font-size: 2.4rem;
   font-weight: 300;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   /*text-align: center;*/
-  font-family: "Rubik Dirt";
+  font-family: anan3;
 }
 
 header h3 {
@@ -33,7 +34,7 @@ header h3 {
   margin-bottom: 6rem;
   text-align: end;
   width: 30rem;
-  font-family: "Rubik Dirt";
+  font-family: anan3;
 }
 .span2 {
   color: #e71b1b;

@@ -520,12 +520,12 @@ input:focus {
 }
 
 .flex h2 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: rgb(248, 62, 62);
   text-align: center;
-  margin-bottom: 3.2rem;
+  margin-bottom: 3.6rem;
   width: 39rem;
-  font-family: "Rubik Dirt";
+  font-family: anan3;
   font-weight: 300;
 }
 .window {
