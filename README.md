@@ -1,2 +1,2 @@
 # drink-e-commerce
- A fully functional energy drink e-commerce web app
+ A drink e-commerce project with a simple and fresh ui/ux design where backend (buyouts) handled with firebase
