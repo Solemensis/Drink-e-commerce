@@ -16,7 +16,7 @@
 .relative {
   position: relative;
   left: -24.4rem;
-
+  z-index: -99999999;
   width: 80rem;
   height: 80rem;
 }

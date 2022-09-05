@@ -8,12 +8,23 @@
   <img class="basket" src="../ico/cart2.svg" alt="" />
 
   <ul>
-    <li>Home</li>
-    <!-- <li>Shop</li> -->
-    <li>Ingredients</li>
+    <!-- <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </nav>
+    </div>
+  </header>
 
-    <li>Contact</li>
+  <RouterView />
+</template> -->
+
+    <li><RouterLink class="li" to="/">Home</RouterLink></li>
+    <!-- <li>Shop</li> -->
+    <li><RouterLink class="li" to="/ingredients">Ingredients</RouterLink></li>
+
+    <li><RouterLink class="li" to="/contact">Contact</RouterLink></li>
   </ul>
+  <RouterView />
 </template>
 
 <style scoped>
@@ -30,12 +41,12 @@ ul {
   padding: 0.5rem 1rem;
   z-index: 900;
 }
-ul li {
+.li {
   font-size: 2rem;
+  text-decoration: none;
+  color: black;
 }
-ul li:hover {
-  cursor: pointer;
-}
+
 .logo {
   height: 6rem;
   position: absolute;

