@@ -1,5 +1,5 @@
 # drink-e-commerce
- An energy drink e-commerce project - https://solemensis.github.io/drink-e-commerce/
+ An energy drink e-commerce project - https://capable-crisp-fc7efb.netlify.app/
 
 
 - With fresh & simple ui/ux design where backend (buyouts) handled with firebase.
