@@ -24,7 +24,7 @@
   width: 80rem;
   position: absolute;
   left: -33%;
-  top: 2.5rem;
+  top: 1.5rem;
   z-index: -11;
   /*filter: blur(9px);*/
 }

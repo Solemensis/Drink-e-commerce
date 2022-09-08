@@ -66,7 +66,8 @@ div {
   row-gap: 4rem;
   position: absolute;
   right: 5rem;
-  top: 21.3rem;
+  top: 53.2%;
+  transform: translate(0, -50%);
 }
 
 img {
@@ -77,21 +78,22 @@ img {
 .modal {
   position: absolute;
   right: 18rem;
-  top: 20.5rem;
+  top: 39%;
+
   width: 15rem;
   height: 16rem;
 }
 .modal2 {
   position: absolute;
   right: 18rem;
-  top: 30.2rem;
+  top: 52%;
   width: 15rem;
   height: 16rem;
 }
 .modal3 {
   position: absolute;
   right: 18rem;
-  top: 38.5rem;
+  top: 63%;
   width: 15rem;
   height: 16rem;
 }

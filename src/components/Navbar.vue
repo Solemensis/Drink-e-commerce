@@ -8,23 +8,18 @@
   <img class="basket" src="../ico/cart2.svg" alt="" />
 
   <ul>
-    <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-</template> -->
-
     <li><RouterLink class="li" to="/">Home</RouterLink></li>
     <!-- <li>Shop</li> -->
     <li><RouterLink class="li" to="/ingredients">Ingredients</RouterLink></li>
 
     <li><RouterLink class="li" to="/contact">Contact</RouterLink></li>
   </ul>
-  <RouterView />
+
+  <RouterView v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </RouterView>
 </template>
 
 <style scoped>
@@ -77,5 +72,20 @@ ul {
   position: absolute;
   right: 17rem;
   top: 3.8rem;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+a:hover,
+a.router-link-active {
+  border-bottom: 1px solid red;
+  padding-bottom: 2px;
 }
 </style>
