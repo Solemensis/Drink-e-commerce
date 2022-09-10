@@ -74,9 +74,9 @@ const products = ref([
         </div> -->
         <teleport to="body">
           <img
-            data-aos="zoom-in"
-            data-aos-duration="800"
             class="spline-png"
+            data-aos="zoom-in"
+            data-aos-duration="900"
             src="../img/spline.png"
             alt=""
           />
@@ -130,20 +130,20 @@ const products = ref([
 }
 .spline-png {
   position: absolute;
-  left: -3%;
-  top: -5%;
-  width: 190rem;
-  height: 90.3rem;
+  left: 38%;
+  top: 18%;
+  height: 55rem;
+  width: 75rem;
+
   z-index: -99999;
   animation: float 4s infinite alternate ease-in-out;
 }
-
 @keyframes float {
   0% {
-    height: 90.3rem;
+    height: 54rem;
   }
   100% {
-    height: 93rem;
+    height: 56rem;
   }
 }
 .spline {

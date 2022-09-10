@@ -14,12 +14,6 @@
 
     <li><RouterLink class="li" to="/contact">Contact</RouterLink></li>
   </ul>
-
-  <RouterView v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </RouterView>
 </template>
 
 <style scoped>
@@ -72,15 +66,6 @@ ul {
   position: absolute;
   right: 17rem;
   top: 3.8rem;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease-out;
 }
 
 a:hover,

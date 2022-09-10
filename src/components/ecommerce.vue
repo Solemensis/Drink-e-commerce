@@ -10,7 +10,7 @@ const showModal3 = ref(false);
 </script>
 
 <template>
-  <div data-aos="fade-left" data-aos-duration="800">
+  <div data-aos="fade-left" data-aos-duration="900">
     <img class="blob" src="../img/blob.png" alt="" />
     <img
       @mouseenter="showModal1 = true"

@@ -6,7 +6,7 @@
       <div class="relative">
         <img
           data-aos="fade-right"
-          data-aos-duration="800"
+          data-aos-duration="900"
           class="spiral"
           src="../img/spiral.png"
         />
@@ -28,10 +28,10 @@
   height: 80rem;
 }
 .spiral {
-  width: 80rem;
+  width: 60rem;
   position: absolute;
-  left: -33%;
-  top: 1.5rem;
+  left: -22.5%;
+  top: 9rem;
   z-index: -11;
   /*filter: blur(9px);*/
 }
