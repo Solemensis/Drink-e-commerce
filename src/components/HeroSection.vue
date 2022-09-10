@@ -3,7 +3,14 @@
 <template>
   <section>
     <div>
-      <div class="relative"><img class="spiral" src="../img/spiral.png" /></div>
+      <div class="relative">
+        <img
+          data-aos="fade-right"
+          data-aos-duration="800"
+          class="spiral"
+          src="../img/spiral.png"
+        />
+      </div>
 
       <!-- <img class="img1" src="../img/red.png" />
       <img class="img2" src="../img/green.png" />

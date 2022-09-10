@@ -73,7 +73,13 @@ const products = ref([
           ></iframe>
         </div> -->
         <teleport to="body">
-          <img class="spline-png" src="../img/spline.png" alt="" />
+          <img
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            class="spline-png"
+            src="../img/spline.png"
+            alt=""
+          />
 
           <!-- <img class="big-ball" src="../img/big_ball.png" />
 

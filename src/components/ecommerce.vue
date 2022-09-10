@@ -10,7 +10,7 @@ const showModal3 = ref(false);
 </script>
 
 <template>
-  <div>
+  <div data-aos="fade-left" data-aos-duration="800">
     <img class="blob" src="../img/blob.png" alt="" />
     <img
       @mouseenter="showModal1 = true"
@@ -30,6 +30,7 @@ const showModal3 = ref(false);
       src="../img/3.png"
     />
   </div>
+
   <Modal class="modal" v-show="showModal1" />
   <Modal2 class="modal2" v-show="showModal2" />
   <Modal3 class="modal3" v-show="showModal3" />
@@ -60,14 +61,15 @@ const showModal3 = ref(false);
   width: 10rem;
   z-index: -100;
 }
+
 div {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 4rem;
   position: absolute;
   right: 5rem;
-  top: 53.2%;
-  transform: translate(0, -50%);
+  top: 30%;
+  transform: translate(-50%);
 }
 
 img {
@@ -77,23 +79,23 @@ img {
 
 .modal {
   position: absolute;
-  right: 18rem;
-  top: 39%;
+  right: 11rem;
+  top: 29%;
 
   width: 15rem;
   height: 16rem;
 }
 .modal2 {
   position: absolute;
-  right: 18rem;
-  top: 52%;
+  right: 11rem;
+  top: 42%;
   width: 15rem;
   height: 16rem;
 }
 .modal3 {
   position: absolute;
-  right: 18rem;
-  top: 63%;
+  right: 11rem;
+  top: 54%;
   width: 15rem;
   height: 16rem;
 }
