@@ -4,13 +4,20 @@ import DrinkOption2 from "./DrinkOption2.vue";
 import DrinkOption3 from "./DrinkOption3.vue";
 import DrinkOption4 from "./DrinkOption4.vue";
 import CartWindow from "./CartWindow.vue";
+import { amountStore } from "../../stores/CartStore";
+import { boolStore } from "../../stores/CartStore";
 
 // burda objectleri oluşturcaz. checkout basınca, objectlerin bilgilerini drinkoption'lardan buraya emit edicez
 // ve ardından hazırlanmış objectleri cardwindow'a prop edicez. hepsi tek click eventle olcak
 
 import { ref } from "vue";
 
+// const total = ref(0);
+// const total = ref(amountStore().count);
 const total = ref(0);
+
+amountStore().count = total;
+
 const bool = ref();
 
 const products = ref([
@@ -102,7 +109,7 @@ const products = ref([
         <h3>{{ products[3].amount }}</h3>
       </div> -->
 
-      <button @click="bool = true">
+      <button @click="boolStore().bool = true">
         <img
           src="../ico/etiket.svg "
         />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checkout

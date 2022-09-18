@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { db } from "../firebaseee/index.js";
 import { collection, addDoc } from "firebase/firestore";
 import Modal from "./ConfirmModal.vue";
+import { boolStore } from "../../stores/CartStore";
 
 const props = defineProps({
   msg: Boolean,
@@ -52,7 +53,7 @@ function sendToFirebase() {
 
 <template>
   <Transition name="modal">
-    <div v-show="msg" class="window">
+    <div v-show="boolStore().bool" class="window">
       <div class="flex">
         <div>
           <h2>Cart Summary</h2>
@@ -116,10 +117,11 @@ function sendToFirebase() {
                 <input
                   v-model="digit"
                   class="xxxx"
-                  placeholder="xxxx"
+                  placeholder="****"
                   type="number"
                   maxlength="4"
                   required
+                  disabled="true"
                 />
               </div>
 
@@ -160,7 +162,7 @@ function sendToFirebase() {
         <div>
           <h2>Address</h2>
 
-          <div @click="$emit('close')" class="cancel">&#128473;</div>
+          <div @click="boolStore().bool = false" class="cancel">&#128473;</div>
 
           <form action="" method="get">
             <div>

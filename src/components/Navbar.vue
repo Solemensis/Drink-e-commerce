@@ -1,11 +1,20 @@
-<script setup></script>
+<script setup>
+import { amountStore } from "../../stores/CartStore";
+import { boolStore } from "../../stores/CartStore";
+</script>
 
 <template>
   <img class="logo" src="../img/logo.png" alt="" />
 
-  <img class="qm" src="../img/question-mark.svg" alt="" />
+  <!-- <img class="qm" src="../img/question-mark.svg" alt="" /> -->
   <!-- <img class="blob" src="../img/blob.png" alt="" /> -->
-  <img class="basket" src="../ico/cart2.svg" alt="" />
+  <h3>{{ amountStore().count / 2 }}</h3>
+  <img
+    @click="boolStore().bool = true"
+    class="basket"
+    src="../ico/cart2.svg"
+    alt=""
+  />
 
   <ul>
     <li><RouterLink class="li" to="/">Home</RouterLink></li>
@@ -57,6 +66,13 @@ ul {
   top: 2.4rem;
   right: 7.3rem;
   transition: 0.1s;
+}
+h3 {
+  position: absolute;
+  right: 12.5rem;
+  top: 1.7rem;
+  font-size: 2.2rem;
+  color: red;
 }
 .basket:hover {
   scale: 1.05;
