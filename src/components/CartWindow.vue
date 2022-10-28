@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
-import { db } from "../firebaseee/index.js";
-import { collection, addDoc } from "firebase/firestore";
+// import { db } from "../firebaseee/index.js";
+// import { collection, addDoc } from "firebase/firestore";
 import Modal from "./ConfirmModal.vue";
 import { boolStore } from "../../stores/CartStore";
 
