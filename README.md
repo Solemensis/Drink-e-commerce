@@ -1,9 +1,10 @@
-# drink-e-commerce
- An energy drink e-commerce project - https://capable-crisp-fc7efb.netlify.app/
+# [Web App] Drink-e-commerce
+Drink e-commerce website - https://unique-bublanina-f4b6de.netlify.app/
 
 
-- With fresh & simple ui/ux design where backend (form sends) handled with Firebase.
+- With fresh & simple ui/ux design.
 - Page routing handled with Vue Router.
 - State management handled with Pinia.
+- Form inputs are being sent to Firebase Cloud Firestore.
 - Content is not responsive on mobile devices for now. Will add the feature soon.
 
