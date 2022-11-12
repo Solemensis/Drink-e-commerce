@@ -52,213 +52,220 @@ function sendToFirebase() {
 </script>
 
 <template>
-  <Transition name="modal">
-    <div v-show="boolStore().bool" class="window">
-      <div class="flex">
-        <div>
-          <h2>Cart Summary</h2>
-          <div class="object">
-            <div class="green">
-              <p>
-                <span>Melon Tree</span>
-                <span>{{ products[0].amount }}</span>
-              </p>
+  <div class="wrap">
+    <Transition name="modal">
+      <div v-show="boolStore().bool" class="window">
+        <div class="flex">
+          <div>
+            <h2>Cart Summary</h2>
+            <div class="object">
+              <div class="green">
+                <p>
+                  <span>Melon Tree</span>
+                  <span>{{ products[0].amount }}</span>
+                </p>
+              </div>
+              <div class="red">
+                <p>
+                  <span>Strawberry Waterfall</span>
+                  <span>{{ products[1].amount }}</span>
+                </p>
+              </div>
+              <div class="purple">
+                <p>
+                  <span>Pure Magic</span>
+                  <span>{{ products[2].amount }}</span>
+                </p>
+              </div>
+              <div class="brown">
+                <p>
+                  <span>++ Caffeine</span>
+                  <span>{{ products[3].amount }}</span>
+                </p>
+              </div>
             </div>
-            <div class="red">
-              <p>
-                <span>Strawberry Waterfall</span>
-                <span>{{ products[1].amount }}</span>
-              </p>
-            </div>
-            <div class="purple">
-              <p>
-                <span>Pure Magic</span>
-                <span>{{ products[2].amount }}</span>
-              </p>
-            </div>
-            <div class="brown">
-              <p>
-                <span>++ Caffeine</span>
-                <span>{{ products[3].amount }}</span>
-              </p>
-            </div>
-          </div>
-          <div class="credit-card">
-            <div class="front">
-              <input
-                v-model="cardHolder"
-                class="card-holder-name"
-                placeholder="Card Holder Name"
-                type="text"
-                required
-              />
-              <div class="flex2">
+            <div class="credit-card">
+              <div class="front">
                 <input
-                  disabled="true"
-                  class="xxxx"
-                  placeholder="****"
+                  v-model="cardHolder"
+                  class="card-holder-name"
+                  placeholder="Card Holder Name"
                   type="text"
                   required
                 />
-                <input
-                  disabled="true"
-                  class="xxxx"
-                  placeholder="****"
-                  type="password"
-                  required
-                />
-                <input
-                  disabled="true"
-                  class="xxxx"
-                  placeholder="****"
-                  type="password"
-                  required
-                />
-                <input
-                  v-model="digit"
-                  class="xxxx"
-                  placeholder="****"
-                  type="number"
-                  maxlength="4"
-                  required
-                  disabled="true"
-                />
-              </div>
+                <div class="flex2">
+                  <input
+                    disabled="true"
+                    class="xxxx"
+                    placeholder="****"
+                    type="text"
+                    required
+                  />
+                  <input
+                    disabled="true"
+                    class="xxxx"
+                    placeholder="****"
+                    type="password"
+                    required
+                  />
+                  <input
+                    disabled="true"
+                    class="xxxx"
+                    placeholder="****"
+                    type="password"
+                    required
+                  />
+                  <input
+                    v-model="digit"
+                    class="xxxx"
+                    placeholder="****"
+                    type="number"
+                    maxlength="4"
+                    required
+                    disabled="true"
+                  />
+                </div>
 
-              <div class="flex3">
+                <div class="flex3">
+                  <input
+                    v-model="expirationMM"
+                    class="tarih"
+                    placeholder="MM"
+                    type="number"
+                    maxlength="2"
+                    required
+                  />
+                  <p>&nbsp;&nbsp;/&nbsp;&nbsp;</p>
+                  <input
+                    v-model="expirationYY"
+                    class="tarih"
+                    placeholder="YY"
+                    type="number"
+                    maxlength="2"
+                    required
+                  />
+                </div>
+                <img class="cc-icon" src="../img/cc-icon.png" />
+              </div>
+              <div class="back">
+                <div class="stripe"></div>
                 <input
-                  v-model="expirationMM"
-                  class="tarih"
-                  placeholder="MM"
-                  type="number"
-                  maxlength="2"
-                  required
-                />
-                <p>&nbsp;&nbsp;/&nbsp;&nbsp;</p>
-                <input
-                  v-model="expirationYY"
-                  class="tarih"
-                  placeholder="YY"
-                  type="number"
-                  maxlength="2"
+                  v-model="cvv"
+                  class="cvv"
+                  placeholder="cvv"
+                  type="password"
                   required
                 />
               </div>
-              <img class="cc-icon" src="../img/cc-icon.png" />
-            </div>
-            <div class="back">
-              <div class="stripe"></div>
-              <input
-                v-model="cvv"
-                class="cvv"
-                placeholder="cvv"
-                type="password"
-                required
-              />
             </div>
           </div>
-        </div>
-        <div class="seperater"></div>
-        <div>
-          <h2>Address</h2>
+          <div class="seperater"></div>
+          <div>
+            <h2>Address</h2>
 
-          <div @click="boolStore().bool = false" class="cancel">&#128473;</div>
-
-          <form action="" method="get">
-            <div>
-              <input
-                v-model="firstName"
-                placeholder="First Name"
-                type="text"
-                required
-              />
-            </div>
-            <div>
-              <input
-                v-model="lastName"
-                placeholder="Last Name"
-                type="text"
-                required
-              />
+            <div @click="boolStore().bool = false" class="cancel">
+              &#128473;
             </div>
 
-            <div>
-              <input placeholder="USA" type="text" disabled="true" required />
-            </div>
-            <div>
-              <input
-                placeholder="New York City"
-                type="text"
-                disabled="true"
-                required
-              />
-            </div>
-            <div>
-              <input
-                v-model="street"
-                placeholder="Street"
-                type="text"
-                required
-              />
-            </div>
-            <div>
-              <input
-                v-model="postalCode"
-                placeholder="Postal Code"
-                type="text"
-                required
-              />
-            </div>
+            <form action="" method="get">
+              <div>
+                <input
+                  v-model="firstName"
+                  placeholder="First Name"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  v-model="lastName"
+                  placeholder="Last Name"
+                  type="text"
+                  required
+                />
+              </div>
 
-            <div>
-              <input
-                v-model="phone"
-                placeholder="Phone"
-                type="number"
-                required
-              />
-            </div>
-            <div>
-              <input
-                v-model="mail"
-                placeholder="E-mail"
-                type="email"
-                required
-              />
-            </div>
-            <textarea
-              v-model="address"
-              placeholder="Address"
-              class="textarea"
-            ></textarea>
-          </form>
-        </div>
-        <p class="total">
-          <nobr>
-            Total: <span class="totalspan">${{ total }}.00</span></nobr
+              <div>
+                <input placeholder="USA" type="text" disabled="true" required />
+              </div>
+              <div>
+                <input
+                  placeholder="New York City"
+                  type="text"
+                  disabled="true"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  v-model="street"
+                  placeholder="Street"
+                  type="text"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  v-model="postalCode"
+                  placeholder="Postal Code"
+                  type="text"
+                  required
+                />
+              </div>
+
+              <div>
+                <input
+                  v-model="phone"
+                  placeholder="Phone"
+                  type="number"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  v-model="mail"
+                  placeholder="E-mail"
+                  type="email"
+                  required
+                />
+              </div>
+              <textarea
+                v-model="address"
+                placeholder="Address"
+                class="textarea"
+              ></textarea>
+            </form>
+          </div>
+          <p class="total">
+            <nobr>
+              Total: <span class="totalspan">${{ total }}.00</span></nobr
+            >
+          </p>
+          <button
+            @click="(showModal = true), sendToFirebase()"
+            :disabled="total === 0"
+            class="send"
           >
-        </p>
-        <button
-          @click="(showModal = true), sendToFirebase()"
-          :disabled="total === 0"
-          class="send"
-        >
-          Pay
-        </button>
+            Pay
+          </button>
+        </div>
+        <!-- <Teleport to="body"> -->
+        <!-- use the modal component, pass in the prop -->
+        <modal :show="showModal" @close="showModal = false">
+          <template #header>
+            <h3>custom header</h3>
+          </template>
+        </modal>
+        <!-- </Teleport> -->
       </div>
-      <!-- <Teleport to="body"> -->
-      <!-- use the modal component, pass in the prop -->
-      <modal :show="showModal" @close="showModal = false">
-        <template #header>
-          <h3>custom header</h3>
-        </template>
-      </modal>
-      <!-- </Teleport> -->
-    </div>
-  </Transition>
+    </Transition>
+  </div>
 </template>
 
 <style scoped>
+.wrap {
+  z-index: 9999999999999999999999999;
+}
 * {
   font-family: "DynaPuff";
   font-weight: 300 !important;
@@ -470,7 +477,7 @@ input[type="number"] {
   z-index: -1;
 }
 .stripe {
-  background-color: #272727;
+  /* background-color: #272727; */
   width: 10rem;
   height: 3.5rem;
   position: absolute;

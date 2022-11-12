@@ -10,33 +10,60 @@ const showModal3 = ref(false);
 </script>
 
 <template>
-  <div data-aos="fade-left" data-aos-duration="900">
-    <img class="blob" src="../img/blob.png" alt="" />
-    <img
-      @mouseenter="showModal1 = true"
-      @mouseleave="showModal1 = false"
-      src="../img/1.png"
-    />
-    <img class="blob2" src="../img/blob.png" alt="" />
-    <img
-      @mouseenter="showModal2 = true"
-      @mouseleave="showModal2 = false"
-      src="../img/2.png"
-    />
-    <img class="blob3" src="../img/blob.png" alt="" />
-    <img
-      @mouseenter="showModal3 = true"
-      @mouseleave="showModal3 = false"
-      src="../img/3.png"
-    />
+  <div class="relative">
+    <div>
+      <div class="section-class">
+        <div class="box">
+          <img class="blob" src="../img/blob.png" alt="" />
+          <img
+            @mouseenter="showModal1 = true"
+            @mouseleave="showModal1 = false"
+            src="../img/1.png"
+          />
+          <Modal class="modal" v-show="showModal1" />
+        </div>
+        <div class="box">
+          <img class="blob2" src="../img/blob.png" alt="" />
+          <img
+            @mouseenter="showModal2 = true"
+            @mouseleave="showModal2 = false"
+            src="../img/2.png"
+          />
+          <Modal2 class="modal2" v-show="showModal2" />
+        </div>
+        <div class="box">
+          <img class="blob3" src="../img/blob.png" alt="" />
+          <img
+            @mouseenter="showModal3 = true"
+            @mouseleave="showModal3 = false"
+            src="../img/3.png"
+          />
+          <Modal3 class="modal3" v-show="showModal3" />
+        </div>
+      </div>
+    </div>
   </div>
-
-  <Modal class="modal" v-show="showModal1" />
-  <Modal2 class="modal2" v-show="showModal2" />
-  <Modal3 class="modal3" v-show="showModal3" />
 </template>
 
 <style scoped>
+.box {
+  position: relative;
+}
+.section-class {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4rem;
+  position: absolute;
+  right: 3rem;
+  top: 53.8%;
+  transform: translateY(-50%) !important;
+  z-index: 9;
+}
+@media (orientation: portrait) {
+  .section-class {
+    display: none;
+  }
+}
 .blob {
   position: absolute;
   top: -2%;
@@ -47,7 +74,7 @@ const showModal3 = ref(false);
 }
 .blob2 {
   position: absolute;
-  top: 35.5%;
+  top: -5%;
   right: -4%;
   height: 10rem;
   width: 10rem;
@@ -55,21 +82,11 @@ const showModal3 = ref(false);
 }
 .blob3 {
   position: absolute;
-  top: 73%;
+  top: -2%;
   right: -5%;
   height: 10rem;
   width: 10rem;
   z-index: -100;
-}
-
-div {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 4rem;
-  position: absolute;
-  right: 5rem;
-  top: 30%;
-  transform: translate(-50%);
 }
 
 img {
@@ -79,24 +96,26 @@ img {
 
 .modal {
   position: absolute;
-  right: 11rem;
-  top: 29%;
-
+  right: 12.5rem;
+  top: -5%;
+  z-index: 99999;
   width: 15rem;
   height: 16rem;
 }
 .modal2 {
   position: absolute;
-  right: 11rem;
-  top: 42%;
+  right: 12.5rem;
+  top: -45%;
   width: 15rem;
   height: 16rem;
+  z-index: 99999;
 }
 .modal3 {
   position: absolute;
-  right: 11rem;
-  top: 54%;
+  right: 12.5rem;
+  top: -98%;
   width: 15rem;
   height: 16rem;
+  z-index: 99999;
 }
 </style>

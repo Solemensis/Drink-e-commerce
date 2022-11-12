@@ -8,14 +8,14 @@ import Footer from "./components/footer.vue";
 <template>
   <Navbar />
   <RouterView v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
+    <!-- <transition name="fade" mode="out-in"> -->
+    <component :is="Component" />
+    <!-- </transition> -->
   </RouterView>
   <!-- <Footer /> -->
 </template>
 
-<style scoped>
+<style>
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

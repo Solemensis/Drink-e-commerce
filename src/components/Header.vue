@@ -11,6 +11,7 @@
 <style scoped>
 header {
   width: 50rem;
+  z-index: 99999;
 }
 header h2 {
   font-size: 8rem;

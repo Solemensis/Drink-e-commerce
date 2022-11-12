@@ -25,10 +25,9 @@ html {
   overflow: hidden;
   user-select: none;
 }
-
 body {
-  background-image: linear-gradient(to right, #ffecfd80, #ecedff98);
-
+  /* background-image: linear-gradient(to right, #ffecfd80, #ecedff98); */
+  background-color: #fff !important;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }

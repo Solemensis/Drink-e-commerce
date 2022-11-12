@@ -12,21 +12,21 @@ const amount = ref(0);
 
       <div class="buttons">
         <button
-          class="button2"
+          class="button"
           @click="
             amount >= 0 ? amount-- : null,
               $emit('reduce', amount >= 0 ? 1 : (amount = 0)),
               $emit('amount', amount)
           "
         >
-          <img class="down-arrow" src="../ico/arrow.svg" />
+          ⊲
         </button>
         <p class="amount">{{ amount }}</p>
         <button
-          class="button1"
+          class="button"
           @click="amount++, $emit('increment', 1), $emit('amount', amount)"
         >
-          <img class="up-arrow" src="../ico/arrow.svg" />
+          ⊳
         </button>
       </div>
     </div>
@@ -51,13 +51,10 @@ const amount = ref(0);
 span {
   font-size: 2rem;
 }
-.button1 {
-  transform: rotate(90deg);
+.button {
   z-index: 100;
-}
-.button2 {
-  transform: rotate(90deg);
-  z-index: 100;
+  font-size: 1.6rem;
+  color: #eee;
 }
 
 .option {
@@ -76,6 +73,7 @@ span {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: 1px solid #229a1c5d;
 }
+
 .amount {
   font-size: 2.2rem;
   font-weight: 600;

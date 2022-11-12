@@ -4,25 +4,27 @@ import { boolStore } from "../../stores/CartStore";
 </script>
 
 <template>
-  <img class="logo" src="../img/logo.png" alt="" />
+  <div>
+    <img class="logo" src="../img/logo.png" alt="" />
 
-  <!-- <img class="qm" src="../img/question-mark.svg" alt="" /> -->
-  <!-- <img class="blob" src="../img/blob.png" alt="" /> -->
-  <h3>{{ amountStore().count / 2 }}</h3>
-  <img
-    @click="boolStore().bool = true"
-    class="basket"
-    src="../ico/cart2.svg"
-    alt=""
-  />
+    <!-- <img class="qm" src="../img/question-mark.svg" alt="" /> -->
+    <!-- <img class="blob" src="../img/blob.png" alt="" /> -->
+    <h3>{{ amountStore().count / 2 }}</h3>
+    <img
+      @click="boolStore().bool = true"
+      class="basket"
+      src="../ico/cart2.svg"
+      alt=""
+    />
 
-  <ul>
-    <li><RouterLink class="li" to="/">Home</RouterLink></li>
-    <!-- <li>Shop</li> -->
-    <li><RouterLink class="li" to="/ingredients">Ingredients</RouterLink></li>
+    <ul>
+      <li><RouterLink class="li" to="/">Home</RouterLink></li>
+      <!-- <li>Shop</li> -->
+      <li><RouterLink class="li" to="/ingredients">Ingredients</RouterLink></li>
 
-    <li><RouterLink class="li" to="/contact">Contact</RouterLink></li>
-  </ul>
+      <li><RouterLink class="li" to="/contact">Contact</RouterLink></li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>

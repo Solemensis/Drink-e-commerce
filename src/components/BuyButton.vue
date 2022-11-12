@@ -41,37 +41,38 @@ const products = ref([
 </script>
 
 <template>
-  <Teleport to="body">
-    <CartWindow
-      :total="total"
-      :msg="bool"
-      @close="bool = false"
-      :products="products"
-  /></Teleport>
   <div>
-    <div class="wrapper">
-      <div class="product-group">
-        <DrinkOption
-          @amount="(value) => (products[0].amount = value)"
-          @increment="(value) => (total += value * 2)"
-          @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-        />
-        <DrinkOption2
-          @increment="(value) => (total += value * 2)"
-          @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-          @amount="(value) => (products[1].amount = value)"
-        />
-        <DrinkOption3
-          @increment="(value) => (total += value * 2)"
-          @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-          @amount="(value) => (products[2].amount = value)"
-        />
-        <DrinkOption4
-          @increment="(value) => (total += value * 2)"
-          @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-          @amount="(value) => (products[3].amount = value)"
-        />
-        <!-- <div class="spline">
+    <Teleport to="body">
+      <CartWindow
+        :total="total"
+        :msg="bool"
+        @close="bool = false"
+        :products="products"
+    /></Teleport>
+    <div>
+      <div class="wrapper">
+        <div class="product-group">
+          <DrinkOption
+            @amount="(value) => (products[0].amount = value)"
+            @increment="(value) => (total += value * 2)"
+            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
+          />
+          <DrinkOption2
+            @increment="(value) => (total += value * 2)"
+            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
+            @amount="(value) => (products[1].amount = value)"
+          />
+          <DrinkOption3
+            @increment="(value) => (total += value * 2)"
+            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
+            @amount="(value) => (products[2].amount = value)"
+          />
+          <DrinkOption4
+            @increment="(value) => (total += value * 2)"
+            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
+            @amount="(value) => (products[3].amount = value)"
+          />
+          <!-- <div class="spline">
           <iframe
             src="https://my.spline.design/lightingtoruscopy-777e63b20245a5789fffa9aa66bd050e/"
             frameborder="0"
@@ -79,78 +80,60 @@ const products = ref([
             height="100%"
           ></iframe>
         </div> -->
-        <teleport to="body">
-          <img
-            class="spline-png"
-            data-aos="zoom-in"
-            data-aos-duration="900"
-            src="../img/spline.png"
-            alt=""
-          />
+          <img class="spline-png" src="../img/spline.png" alt="" />
 
           <!-- <img class="big-ball" src="../img/big_ball.png" />
 
           <img class="big-ball2" src="../img/big_ball.png" />
 
           <img class="small-ball" src="../img/small_ball.png" /> -->
-        </teleport>
 
-        <!-- <img class="circle" src="../img/spiral2.png" /> -->
+          <!-- <img class="circle" src="../img/spiral2.png" /> -->
+        </div>
       </div>
-    </div>
-    <div class="pricing">
-      <h3>
-        Total : <span>&nbsp;${{ total }}.00</span>
-      </h3>
-      <!-- <div class="anan">
+      <div class="pricing">
+        <h3>
+          Total : <span>&nbsp;${{ total }}.00</span>
+        </h3>
+        <!-- <div class="anan">
         <h3>{{ products[0].amount }}</h3>
         <h3>{{ products[1].amount }}</h3>
         <h3>{{ products[2].amount }}</h3>
         <h3>{{ products[3].amount }}</h3>
       </div> -->
 
-      <button @click="boolStore().bool = true">
-        <img
-          src="../ico/etiket.svg "
-        />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checkout
-      </button>
+        <button @click="boolStore().bool = true">
+          <img
+            src="../ico/etiket.svg "
+          />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checkout
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.big-ball {
-  position: absolute;
-  right: 50%;
-  top: 50%;
-  width: 888.5rem;
-
-  filter: invert(1);
+@media (orientation: portrait) {
+  .spline-png {
+    display: none;
+  }
 }
 
-.big-ball2 {
-  position: absolute;
-  left: 57.3rem;
-  top: 32.2rem;
-  width: 6.2rem;
-  filter: invert(1);
-}
 .spline-png {
   position: absolute;
-  left: 38%;
-  top: 18%;
-  height: 55rem;
-  width: 75rem;
-
-  z-index: -99999;
+  left: -10%;
+  top: -14%;
+  height: 47rem;
+  width: 65rem;
+  z-index: -9999999999999999999999;
   animation: float 4s infinite alternate ease-in-out;
 }
 @keyframes float {
   0% {
-    height: 54rem;
+    transform: translateY(0);
   }
   100% {
-    height: 56rem;
+    transform: translateY(1rem);
   }
 }
 .spline {
@@ -206,10 +189,11 @@ img {
 .product-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   justify-items: center;
   align-items: center;
   height: 40rem;
-  width: 60rem;
+  width: 50rem;
   position: absolute;
   top: 8%;
   right: -170%;

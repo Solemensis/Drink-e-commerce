@@ -1,15 +1,17 @@
 <script setup></script>
 
 <template>
-  <Transition name="modal">
-    <div class="wrapper">
-      <div class="group">
-        <h1>Lorem, ipsum.</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+  <div>
+    <Transition name="modal">
+      <div class="wrapper">
+        <div class="group">
+          <h1>Lorem, ipsum.</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+        </div>
+        <div id="triangle-right"></div>
       </div>
-      <div id="triangle-right"></div>
-    </div>
-  </Transition>
+    </Transition>
+  </div>
 </template>
 
 <style scoped>
