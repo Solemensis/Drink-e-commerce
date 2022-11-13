@@ -34,6 +34,11 @@ const amount = ref(0);
 </template>
 
 <style scoped>
+@media (orientation: portrait) {
+  .button {
+    font-size: 1.8rem !important;
+  }
+}
 * {
   font-family: "DynaPuff";
   font-weight: 300 !important;

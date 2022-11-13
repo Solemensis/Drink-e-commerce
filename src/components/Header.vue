@@ -15,9 +15,9 @@
     margin-bottom: 1rem !important;
   }
   h2 {
-    font-size: 8.5rem !important;
+    font-size: 9.5rem !important;
     line-height: 7rem !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 2.5rem !important;
   }
   h3 {
     margin-bottom: 4rem !important;

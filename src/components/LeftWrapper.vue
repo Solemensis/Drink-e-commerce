@@ -94,9 +94,12 @@ import DrinkOption4 from "./DrinkOption4.vue";
     animation: float 4s infinite alternate ease-in-out;
   }
   .spiral {
-    left: -117rem !important;
+    left: -45rem !important;
     width: 120rem !important;
-    top: -20rem !important;
+    top: -35rem !important;
+    transform: rotate(-7deg) !important;
+    opacity: 0.3 !important;
+    filter: blur(20px);
   }
   .left-section {
     top: 40rem !important;
@@ -116,7 +119,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
     align-items: end;
     position: absolute;
     left: 124.5%;
-    top: 3600%;
+    top: 2700%;
   }
   .product-group {
     display: grid;
