@@ -95,8 +95,8 @@ import DrinkOption4 from "./DrinkOption4.vue";
     justify-content: end;
     align-items: end;
     position: absolute;
-    left: 170%;
-    top: 3500%;
+    left: 125%;
+    top: 2600%;
   }
   .product-group {
     display: grid;
