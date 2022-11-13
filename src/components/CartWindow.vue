@@ -192,12 +192,7 @@ function sendToFirebase() {
                 <input placeholder="USA" type="text" disabled="true" required />
               </div>
               <div>
-                <input
-                  placeholder="New York City"
-                  type="text"
-                  disabled="true"
-                  required
-                />
+                <input placeholder="NYC" type="text" disabled="true" required />
               </div>
               <div>
                 <input
@@ -280,7 +275,7 @@ function sendToFirebase() {
   }
   form input {
     width: 10rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
   }
   form {
     width: 25rem !important;
