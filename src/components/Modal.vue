@@ -5,7 +5,7 @@
     <Transition name="modal">
       <div class="wrapper">
         <div class="group">
-          <h1>Lorem, ipsum.</h1>
+          <h4>Heading 1</h4>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
         </div>
         <div id="triangle-right"></div>
@@ -20,23 +20,23 @@
 }
 .group {
   background-color: #2eaa2727;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem 1rem;
   border-radius: 1rem;
 }
 #triangle-right {
   position: absolute;
-  top: 3.7rem;
-  right: -2.8rem;
-  border-top: 1.4rem solid transparent;
-  border-left: 2.8rem solid #2eaa2727;
-  border-bottom: 1.4rem solid transparent;
+  top: 5rem;
+  right: -2.4rem;
+  border-top: 1rem solid transparent;
+  border-left: 2.4rem solid #2eaa2727;
+  border-bottom: 1rem solid transparent;
 }
 
-h1 {
+h4 {
   color: rgb(0, 0, 0);
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 4rem;
+  font-size: 1.7rem;
+  margin-bottom: 2.5rem;
 }
 p {
   color: rgb(0, 0, 0);

@@ -80,7 +80,13 @@ const products = ref([
             height="100%"
           ></iframe>
         </div> -->
-          <img class="spline-png" src="../img/spline.png" alt="" />
+          <img
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+            class="spline-png"
+            src="../img/spline.png"
+            alt=""
+          />
 
           <!-- <img class="big-ball" src="../img/big_ball.png" />
 
@@ -92,7 +98,7 @@ const products = ref([
         </div>
       </div>
       <div class="pricing">
-        <h3>
+        <h3 class="total">
           Total : <span>&nbsp;${{ total }}.00</span>
         </h3>
         <!-- <div class="anan">
@@ -102,11 +108,13 @@ const products = ref([
         <h3>{{ products[3].amount }}</h3>
       </div> -->
 
-        <button @click="boolStore().bool = true">
-          <img
-            src="../ico/etiket.svg "
-          />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checkout
-        </button>
+        <div class="button-box">
+          <button @click="boolStore().bool = true">
+            <img
+              src="../ico/etiket.svg "
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checkout
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -114,8 +122,21 @@ const products = ref([
 
 <style scoped>
 @media (orientation: portrait) {
-  .spline-png {
-    display: none;
+  .product-group {
+    position: static;
+    margin: 0 5rem !important;
+    top: 40rem !important;
+  }
+  .total {
+    text-align: center !important;
+  }
+  button {
+    margin-inline: auto;
+  }
+  .button-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 

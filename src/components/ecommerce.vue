@@ -12,7 +12,7 @@ const showModal3 = ref(false);
 <template>
   <div class="relative">
     <div>
-      <div class="section-class">
+      <div data-aos="zoom-in" data-aos-duration="1200" class="section-class">
         <div class="box">
           <img class="blob" src="../img/blob.png" alt="" />
           <img
@@ -54,7 +54,7 @@ const showModal3 = ref(false);
   grid-template-columns: 1fr;
   row-gap: 4rem;
   position: absolute;
-  right: 3rem;
+  right: 2rem;
   top: 53.8%;
   transform: translateY(-50%) !important;
   z-index: 9;
@@ -96,24 +96,24 @@ img {
 
 .modal {
   position: absolute;
-  right: 12.5rem;
-  top: -5%;
+  right: 12rem;
+  top: -15%;
   z-index: 99999;
   width: 15rem;
   height: 16rem;
 }
 .modal2 {
   position: absolute;
-  right: 12.5rem;
-  top: -45%;
+  right: 12rem;
+  top: -25%;
   width: 15rem;
   height: 16rem;
   z-index: 99999;
 }
 .modal3 {
   position: absolute;
-  right: 12.5rem;
-  top: -98%;
+  right: 12rem;
+  top: -25%;
   width: 15rem;
   height: 16rem;
   z-index: 99999;

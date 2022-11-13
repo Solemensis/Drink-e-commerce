@@ -53,6 +53,20 @@ ul {
   top: 1.7rem;
   left: 14.2rem;
 }
+@media (orientation: portrait) {
+  .logo {
+    left: 3rem;
+  }
+  ul {
+    display: none;
+  }
+  .basket {
+    right: 3rem !important;
+  }
+  h3 {
+    right: 8rem !important;
+  }
+}
 
 .blob {
   width: 6rem;
@@ -73,7 +87,7 @@ h3 {
   position: absolute;
   right: 12.5rem;
   top: 1.7rem;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: red;
 }
 .basket:hover {

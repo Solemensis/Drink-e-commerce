@@ -9,6 +9,23 @@
 </template>
 
 <style scoped>
+@media (orientation: portrait) {
+  h1 {
+    font-size: 3rem !important;
+  }
+  h2 {
+    font-size: 7rem !important;
+    line-height: 6rem !important;
+    margin-bottom: 2rem !important;
+  }
+  h3 {
+    margin-bottom: 3rem !important;
+    font-size: 2.5rem !important;
+  }
+  header {
+    width: 43.2rem !important;
+  }
+}
 header {
   width: 50rem;
   z-index: 99999;
