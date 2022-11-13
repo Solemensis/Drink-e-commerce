@@ -84,7 +84,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
 }
 @media (orientation: portrait) {
   .spline-png2 {
-    display: none;
+    display: block !important;
     position: absolute;
     left: -20%;
     top: -23%;
@@ -100,9 +100,10 @@ import DrinkOption4 from "./DrinkOption4.vue";
     transform: rotate(-7deg) !important;
     opacity: 0.3 !important;
     filter: blur(20px);
+    display: none;
   }
   .left-section {
-    top: 40rem !important;
+    top: 42rem !important;
     border-left: none !important;
     padding: 1rem !important;
   }
@@ -145,6 +146,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
     transition: 0.2s;
     font-family: "Noto Sans";
     font-weight: 700;
+    margin-top: 1rem;
   }
   img {
     width: 4.4rem;
