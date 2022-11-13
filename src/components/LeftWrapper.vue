@@ -1,7 +1,7 @@
 <script setup>
 import BuyButton from "./BuyButton.vue";
 import Header from "./Header.vue";
-import Ecommerce from "../components/Ecommerce.vue";
+import ecommerce from "./ecommerce.vue";
 import DrinkOption from "./DrinkOption.vue";
 import DrinkOption2 from "./DrinkOption2.vue";
 import DrinkOption3 from "./DrinkOption3.vue";
@@ -10,7 +10,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
 
 <template>
   <div>
-    <Ecommerce />
+    <ecommerce />
 
     <div class="left-section">
       <div class="grid1"><Header /> <BuyButton /></div>
@@ -90,14 +90,13 @@ import DrinkOption4 from "./DrinkOption4.vue";
     display: flex;
     gap: 10rem;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     justify-content: end;
     align-items: end;
     position: absolute;
-    left: 15%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 170%;
+    top: 3500%;
   }
   .product-group {
     display: grid;
