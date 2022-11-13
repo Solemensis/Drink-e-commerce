@@ -9,7 +9,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
 </script>
 
 <template>
-  <div>
+  <div style="overflow: hidden !important">
     <ecommerce />
 
     <div class="left-section">
@@ -177,7 +177,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
 }
 .left-section {
   position: absolute;
-  left: 15.5rem;
+  left: 16rem;
   top: 51.5%;
   transform: translate(0, -50%) !important;
   width: 25%;
