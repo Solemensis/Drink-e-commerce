@@ -84,7 +84,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
 }
 @media (orientation: portrait) {
   .spline-png2 {
-    display: block;
+    display: none;
     position: absolute;
     left: -20%;
     top: -23%;
