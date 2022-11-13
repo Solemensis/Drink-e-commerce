@@ -95,7 +95,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
     justify-content: end;
     align-items: end;
     position: absolute;
-    left: 125%;
+    left: 124.5%;
     top: 2600%;
   }
   .product-group {
@@ -116,13 +116,13 @@ import DrinkOption4 from "./DrinkOption4.vue";
     font-weight: 600;
     border-radius: 2222rem;
     border: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
     transition: 0.2s;
     font-family: "Noto Sans";
     font-weight: 700;
   }
   img {
-    width: 3.8rem;
+    width: 4.4rem;
     margin-left: -1.8rem;
     margin-top: -0.9rem;
     position: absolute;

@@ -11,19 +11,22 @@
 <style scoped>
 @media (orientation: portrait) {
   h1 {
-    font-size: 3rem !important;
+    font-size: 4rem !important;
+    margin-bottom: 1rem !important;
   }
   h2 {
-    font-size: 7rem !important;
-    line-height: 6rem !important;
+    font-size: 8.5rem !important;
+    line-height: 7rem !important;
     margin-bottom: 2rem !important;
   }
   h3 {
-    margin-bottom: 3rem !important;
-    font-size: 2.5rem !important;
+    margin-bottom: 4rem !important;
+    font-size: 3rem !important;
+    text-align: end !important;
+    width: auto !important;
   }
   header {
-    width: 43.2rem !important;
+    width: 42.2rem !important;
   }
 }
 header {
