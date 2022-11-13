@@ -9,7 +9,7 @@ const props = defineProps({
     <Transition name="modal">
       <div class="container" v-if="show">
         <ol class="modal-content">
-          <div @click="$emit('close')" class="cancel">&#128473;</div>
+          <div @click="$emit('close')" class="cancel">✘</div>
           <h2>Payment Was <span>Successful!</span></h2>
           <li>Products will be delivered approximately in 30-60 minutes.</li>
           <li class="last-child">
