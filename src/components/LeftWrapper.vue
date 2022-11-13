@@ -59,6 +59,13 @@ import DrinkOption4 from "./DrinkOption4.vue";
             @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
             @amount="(value) => (products[3].amount = value)"
           />
+          <img
+            data-aos="zoom-in"
+            data-aos-duration="1200"
+            class="spline-png2"
+            src="../img/spline.png"
+            alt=""
+          />
         </div>
       </div>
       <img
@@ -72,7 +79,20 @@ import DrinkOption4 from "./DrinkOption4.vue";
 </template>
 
 <style scoped>
+.spline-png2 {
+  display: none;
+}
 @media (orientation: portrait) {
+  .spline-png2 {
+    display: block;
+    position: absolute;
+    left: -20%;
+    top: -23%;
+    height: 47rem;
+    width: 65rem;
+    z-index: -9999999999999999999999;
+    animation: float 4s infinite alternate ease-in-out;
+  }
   .spiral {
     left: -117rem !important;
     width: 120rem !important;
@@ -96,12 +116,14 @@ import DrinkOption4 from "./DrinkOption4.vue";
     align-items: end;
     position: absolute;
     left: 124.5%;
-    top: 2600%;
+    top: 3600%;
   }
   .product-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
+    position: relative;
+    margin-top: 2rem;
   }
   .header {
     text-align: center !important;
@@ -152,7 +174,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
 }
 .left-section {
   position: absolute;
-  left: 17rem;
+  left: 15.5rem;
   top: 51.5%;
   transform: translate(0, -50%) !important;
   width: 25%;
