@@ -55,16 +55,16 @@ ul {
 }
 @media (orientation: portrait) {
   .logo {
-    left: 3rem;
+    left: 4rem;
   }
   ul {
     display: none;
   }
   .basket {
-    right: 3rem !important;
+    right: 4rem !important;
   }
   h3 {
-    right: 8rem !important;
+    right: 9rem !important;
   }
 }
 
@@ -90,8 +90,11 @@ h3 {
   font-size: 2rem;
   color: red;
 }
-.basket:hover {
-  scale: 1.05;
+
+@media (hover: hover) {
+  .basket:hover {
+    scale: 1.05;
+  }
 }
 .qm {
   width: 2rem;
@@ -100,7 +103,13 @@ h3 {
   top: 3.8rem;
 }
 
-a:hover,
+@media (hover: hover) {
+  a:hover {
+    border-bottom: 1px solid red;
+    padding-bottom: 2px;
+  }
+}
+
 a.router-link-active {
   border-bottom: 1px solid red;
   padding-bottom: 2px;

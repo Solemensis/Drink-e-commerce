@@ -16,6 +16,10 @@ import { ref } from "vue";
 // const total = ref(amountStore().count);
 const total = ref(0);
 
+function totalAmount() {
+  return amountStore().totalPrice;
+}
+
 amountStore().count = total;
 
 const bool = ref();
@@ -52,26 +56,10 @@ const products = ref([
     <div>
       <div class="wrapper">
         <div class="product-group">
-          <DrinkOption
-            @amount="(value) => (products[0].amount = value)"
-            @increment="(value) => (total += value * 2)"
-            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-          />
-          <DrinkOption2
-            @increment="(value) => (total += value * 2)"
-            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-            @amount="(value) => (products[1].amount = value)"
-          />
-          <DrinkOption3
-            @increment="(value) => (total += value * 2)"
-            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-            @amount="(value) => (products[2].amount = value)"
-          />
-          <DrinkOption4
-            @increment="(value) => (total += value * 2)"
-            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-            @amount="(value) => (products[3].amount = value)"
-          />
+          <DrinkOption />
+          <DrinkOption2 />
+          <DrinkOption3 />
+          <DrinkOption4 />
           <!-- <div class="spline">
           <iframe
             src="https://my.spline.design/lightingtoruscopy-777e63b20245a5789fffa9aa66bd050e/"
@@ -99,7 +87,7 @@ const products = ref([
       </div>
       <div class="pricing">
         <h3 class="total">
-          Total : <span>&nbsp;${{ total }}.00</span>
+          Total : <span>&nbsp;${{ totalAmount() }}.00</span>
         </h3>
         <!-- <div class="anan">
         <h3>{{ products[0].amount }}</h3>
@@ -193,10 +181,12 @@ button {
   font-family: "Noto Sans";
   font-weight: 700;
 }
-
-button:hover {
-  background-color: #0daa3cc3;
+@media (hover: hover) {
+  button:hover {
+    background-color: #0daa3cc3;
+  }
 }
+
 button:active {
   background-color: #0daa3c;
 }

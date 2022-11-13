@@ -1,7 +1,9 @@
 <script setup>
-import { ref } from "vue";
+import { amountStore } from "../../stores/CartStore";
 
-const amount = ref(0);
+const decrease = function () {
+  if (amountStore().can2 >= 1) amountStore().can2 = amountStore().can2 - 1;
+};
 </script>
 
 <template>
@@ -11,20 +13,12 @@ const amount = ref(0);
       <p class="fruit">Strawberry <br /><span>Waterfall</span></p>
 
       <div class="buttons">
+        <button class="button" @click="decrease()">⊲</button>
+        <p class="amount">{{ amountStore().can2 }}</p>
+
         <button
           class="button"
-          @click="
-            amount >= 0 ? amount-- : null,
-              $emit('reduce', amount >= 0 ? 1 : (amount = 0)),
-              $emit('amount', amount)
-          "
-        >
-          ⊲
-        </button>
-        <p class="amount">{{ amount }}</p>
-        <button
-          class="button"
-          @click="amount++, $emit('increment', 1), $emit('amount', amount)"
+          @click="amountStore().can2 = amountStore().can2 + 1"
         >
           ⊳
         </button>
@@ -98,10 +92,14 @@ span {
   background-color: #c009c0;
   border-radius: 22rem;
   transition: 0.1s;
+  z-index: 9999999999;
 }
-.buttons button:hover {
-  background-color: #9f119f;
+@media (hover: hover) {
+  .buttons button:hover {
+    background-color: #9f119f;
+  }
 }
+
 .buttons button:active {
   background-color: #851185;
 }

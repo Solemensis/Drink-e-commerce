@@ -6,6 +6,11 @@ import DrinkOption from "./DrinkOption.vue";
 import DrinkOption2 from "./DrinkOption2.vue";
 import DrinkOption3 from "./DrinkOption3.vue";
 import DrinkOption4 from "./DrinkOption4.vue";
+import { boolStore } from "../../stores/CartStore";
+import { amountStore } from "../../stores/CartStore";
+function totalAmount() {
+  return amountStore().totalPrice;
+}
 </script>
 
 <template>
@@ -19,7 +24,7 @@ import DrinkOption4 from "./DrinkOption4.vue";
           <Header />
           <div class="pricing">
             <h3 class="total">
-              Total : <span>&nbsp;${{ total }}.00</span>
+              Total : <span>&nbsp;${{ totalAmount() }}.00</span>
             </h3>
             <!-- <div class="anan">
         <h3>{{ products[0].amount }}</h3>
@@ -39,26 +44,10 @@ import DrinkOption4 from "./DrinkOption4.vue";
         </div>
 
         <div class="product-group">
-          <DrinkOption
-            @amount="(value) => (products[0].amount = value)"
-            @increment="(value) => (total += value * 2)"
-            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-          />
-          <DrinkOption2
-            @increment="(value) => (total += value * 2)"
-            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-            @amount="(value) => (products[1].amount = value)"
-          />
-          <DrinkOption3
-            @increment="(value) => (total += value * 2)"
-            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-            @amount="(value) => (products[2].amount = value)"
-          />
-          <DrinkOption4
-            @increment="(value) => (total += value * 2)"
-            @reduce="(value) => (total > 1 ? (total -= value * 2) : null)"
-            @amount="(value) => (products[3].amount = value)"
-          />
+          <DrinkOption />
+          <DrinkOption2 />
+          <DrinkOption3 />
+          <DrinkOption4 />
           <img
             data-aos="zoom-in"
             data-aos-duration="1200"
@@ -82,6 +71,10 @@ import DrinkOption4 from "./DrinkOption4.vue";
 .spline-png2 {
   display: none;
 }
+.grid2 {
+  display: none;
+}
+
 @media (orientation: portrait) {
   .spline-png2 {
     display: block !important;

@@ -4,6 +4,11 @@ import { ref } from "vue";
 // import { collection, addDoc } from "firebase/firestore";
 import Modal from "./ConfirmModal.vue";
 import { boolStore } from "../../stores/CartStore";
+import { amountStore } from "../../stores/CartStore";
+
+function totalAmount() {
+  return amountStore().totalPrice;
+}
 
 const props = defineProps({
   msg: Boolean,
@@ -62,25 +67,25 @@ function sendToFirebase() {
               <div class="green">
                 <p>
                   <span>Melon Tree</span>
-                  <span>{{ products[0].amount }}</span>
+                  <span>{{ amountStore().can1 }}</span>
                 </p>
               </div>
               <div class="red">
                 <p>
                   <span>Strawberry Waterfall</span>
-                  <span>{{ products[1].amount }}</span>
+                  <span>{{ amountStore().can2 }}</span>
                 </p>
               </div>
               <div class="purple">
                 <p>
                   <span>Pure Magic</span>
-                  <span>{{ products[2].amount }}</span>
+                  <span>{{ amountStore().can3 }}</span>
                 </p>
               </div>
               <div class="brown">
                 <p>
                   <span>++ Caffeine</span>
-                  <span>{{ products[3].amount }}</span>
+                  <span>{{ amountStore().can4 }}</span>
                 </p>
               </div>
             </div>
@@ -161,7 +166,7 @@ function sendToFirebase() {
           </div>
           <div class="seperater"></div>
           <div>
-            <h2>Address</h2>
+            <h2 class="address-heading">Address</h2>
 
             <div @click="boolStore().bool = false" class="cancel">
               &#128473;
@@ -238,12 +243,13 @@ function sendToFirebase() {
           </div>
           <p class="total">
             <nobr>
-              Total: <span class="totalspan">${{ total }}.00</span></nobr
+              Total:
+              <span class="totalspan">${{ totalAmount() }}.00</span></nobr
             >
           </p>
           <button
             @click="(showModal = true), sendToFirebase()"
-            :disabled="total === 0"
+            :disabled="totalAmount() === 0"
             class="send"
           >
             Pay
@@ -263,6 +269,83 @@ function sendToFirebase() {
 </template>
 
 <style scoped>
+@media (orientation: portrait) and (max-width: 470px) {
+  .window {
+    width: 60rem !important;
+    overflow: hidden !important;
+  }
+  .object {
+    width: 23rem !important;
+  }
+  .object p {
+    font-size: 1.5rem !important;
+  }
+  form input {
+    width: 10rem !important;
+    font-size: 1.5rem !important;
+  }
+  form {
+    width: 25rem !important;
+    margin: 0 auto !important;
+    margin-left: 3rem !important;
+    justify-items: start !important;
+  }
+  h2 {
+    font-size: 3.8rem !important;
+    padding-left: 10rem !important;
+  }
+  .address-heading {
+    padding-right: 22rem !important;
+  }
+  .cancel {
+    font-size: 2.5rem !important;
+  }
+  .total {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+    right: 14.5rem !important;
+    padding: 0.2rem 0.5rem !important;
+  }
+  .send {
+    right: 4rem !important;
+  }
+  .back {
+    left: 6rem !important;
+    width: 22rem !important;
+    height: 15rem !important;
+  }
+  .cvv {
+    width: 3.5rem !important;
+    right: 0.5rem !important;
+    font-size: 1.5rem !important;
+  }
+  .front {
+    width: 22rem !important;
+    height: 15rem !important;
+    left: 1.5rem !important;
+  }
+  .card-holder-name {
+    width: 18rem !important;
+  }
+  .flex2 {
+    left: 2rem !important;
+    width: 18rem !important;
+  }
+  .cc-icon {
+    height: 3rem !important;
+    right: 2rem !important;
+    bottom: 0.5rem !important;
+  }
+  .flex3 {
+    bottom: -1.7rem !important;
+  }
+  .xxxx {
+    width: 4rem !important;
+  }
+  textarea {
+    width: 22.7rem !important;
+  }
+}
 .wrap {
   z-index: 9999999999999999999999999;
 }
@@ -271,7 +354,7 @@ function sendToFirebase() {
   font-weight: 300 !important;
 }
 .total {
-  font-size: 3rem !important;
+  font-size: 3rem;
   position: absolute;
   bottom: 3rem;
   right: 19rem;
@@ -315,16 +398,22 @@ totalspan {
   transition: 0.2s;
 }
 
-.send:hover {
-  background-color: rgb(187, 40, 118);
+@media (hover: hover) {
+  .send:hover {
+    background-color: rgb(187, 40, 118);
+  }
+  .send:disabled:hover {
+    background-color: rgb(212, 144, 180);
+    cursor: not-allowed;
+  }
 }
+
 .send:active {
   background-color: rgb(127, 25, 80);
 }
 
 .send:disabled,
-.send[disabled],
-.send:disabled:hover {
+.send[disabled] {
   background-color: rgb(212, 144, 180);
   cursor: not-allowed;
 }
@@ -362,9 +451,7 @@ totalspan {
   left: 2rem;
   bottom: -0.35rem;
 }
-.flex p {
-  font-size: 1.4rem;
-}
+
 .object {
   margin-bottom: 5rem;
 }
