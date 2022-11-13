@@ -113,14 +113,14 @@ function totalAmount() {
     align-items: end;
     position: absolute;
     left: 124.5%;
-    top: 2700%;
+    top: 2900%;
   }
   .product-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
     position: relative;
-    margin-top: 2rem;
+    margin-top: 0.1rem;
   }
   .header {
     text-align: center !important;

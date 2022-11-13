@@ -168,9 +168,7 @@ function sendToFirebase() {
           <div>
             <h2 class="address-heading">Address</h2>
 
-            <div @click="boolStore().bool = false" class="cancel">
-              &#128473;
-            </div>
+            <div @click="boolStore().bool = false" class="cancel">✘</div>
 
             <form action="" method="get">
               <div>

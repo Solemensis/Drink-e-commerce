@@ -1,6 +1,9 @@
 <script setup>
 import { amountStore } from "../../stores/CartStore";
 import { boolStore } from "../../stores/CartStore";
+function totalAmount() {
+  return amountStore().totalPrice;
+}
 </script>
 
 <template>
@@ -9,7 +12,7 @@ import { boolStore } from "../../stores/CartStore";
 
     <!-- <img class="qm" src="../img/question-mark.svg" alt="" /> -->
     <!-- <img class="blob" src="../img/blob.png" alt="" /> -->
-    <h3>{{ amountStore().count / 2 }}</h3>
+    <h3>{{ totalAmount() / 2 }}</h3>
     <img
       @click="boolStore().bool = true"
       class="basket"
