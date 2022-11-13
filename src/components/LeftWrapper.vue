@@ -61,7 +61,7 @@ function totalAmount() {
         data-aos="fade-right"
         data-aos-duration="600"
         class="spiral"
-        src="../img/spiral.png"
+        src="../img/spiral.webp"
       />
     </div>
   </div>
