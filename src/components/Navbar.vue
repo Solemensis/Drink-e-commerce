@@ -14,7 +14,7 @@ function totalAmount() {
     <!-- <img class="blob" src="../img/blob.png" alt="" /> -->
     <h3>{{ totalAmount() / 2 }}</h3>
     <img
-      @click="boolStore().bool = true"
+      @click="boolStore().bool = !boolStore().bool"
       class="basket"
       src="../ico/cart2.svg"
       alt=""

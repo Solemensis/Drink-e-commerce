@@ -49,6 +49,7 @@ function totalAmount() {
           <DrinkOption3 />
           <DrinkOption4 />
           <img
+            data-aos-once="true"
             data-aos="zoom-in"
             data-aos-duration="1200"
             class="spline-png2"
@@ -58,6 +59,7 @@ function totalAmount() {
         </div>
       </div>
       <img
+        data-aos-once="true"
         data-aos="fade-right"
         data-aos-duration="600"
         class="spiral"

@@ -12,7 +12,12 @@ const showModal3 = ref(false);
 <template>
   <div class="relative">
     <div>
-      <div data-aos="zoom-in" data-aos-duration="1200" class="section-class">
+      <div
+        data-aos-once="true"
+        data-aos="zoom-in"
+        data-aos-duration="1200"
+        class="section-class"
+      >
         <div class="box">
           <img class="blob" src="../img/blob.png" alt="" />
           <img
@@ -20,8 +25,11 @@ const showModal3 = ref(false);
             @mouseleave="showModal1 = false"
             src="../img/1.png"
           />
-          <Modal class="modal" v-show="showModal1" />
+          <transition name="fade" mode="out-in">
+            <Modal class="modal" v-show="showModal1" />
+          </transition>
         </div>
+
         <div class="box">
           <img class="blob2" src="../img/blob.png" alt="" />
           <img
@@ -29,7 +37,9 @@ const showModal3 = ref(false);
             @mouseleave="showModal2 = false"
             src="../img/2.png"
           />
-          <Modal2 class="modal2" v-show="showModal2" />
+          <transition name="fade" mode="out-in">
+            <Modal2 class="modal2" v-show="showModal2" />
+          </transition>
         </div>
         <div class="box">
           <img class="blob3" src="../img/blob.png" alt="" />
@@ -38,7 +48,9 @@ const showModal3 = ref(false);
             @mouseleave="showModal3 = false"
             src="../img/3.png"
           />
-          <Modal3 class="modal3" v-show="showModal3" />
+          <transition name="fade" mode="out-in">
+            <Modal3 class="modal3" v-show="showModal3" />
+          </transition>
         </div>
       </div>
     </div>

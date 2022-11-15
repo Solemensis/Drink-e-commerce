@@ -2,7 +2,12 @@
 
 <template>
   <section>
-    <main data-aos="zoom-in" data-aos-duration="900" class="contact">
+    <main
+      data-aos-once="true"
+      data-aos="zoom-in"
+      data-aos-duration="900"
+      class="contact"
+    >
       <h1>This is a contact page</h1>
     </main>
   </section>

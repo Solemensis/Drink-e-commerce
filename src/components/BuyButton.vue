@@ -69,6 +69,7 @@ const products = ref([
           ></iframe>
         </div> -->
           <img
+            data-aos-once="true"
             data-aos="zoom-in"
             data-aos-duration="1200"
             class="spline-png"
