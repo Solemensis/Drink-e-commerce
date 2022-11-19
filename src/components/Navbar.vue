@@ -1,9 +1,12 @@
 <script setup>
 import { amountStore } from "../../stores/CartStore";
 import { boolStore } from "../../stores/CartStore";
+import { computed } from "vue";
 function totalAmount() {
   return amountStore().totalPrice;
 }
+
+const cartAmount = computed(() => totalAmount() / 2);
 </script>
 
 <template>
@@ -12,7 +15,7 @@ function totalAmount() {
 
     <!-- <img class="qm" src="../img/question-mark.svg" alt="" /> -->
     <!-- <img class="blob" src="../img/blob.png" alt="" /> -->
-    <h3>{{ totalAmount() / 2 }}</h3>
+    <h3>{{ cartAmount }}</h3>
     <img
       @click="boolStore().bool = !boolStore().bool"
       class="basket"
