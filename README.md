@@ -1,9 +1,29 @@
-# [Web App] Drink-e-commerce
-Responsive drink e-commerce website - https://unique-bublanina-f4b6de.netlify.app/
+# drink-e-commerce-v2
 
+This template should help get you started developing with Vue 3 in Vite.
 
-- With fresh & simple ui/ux design.
-- Page routing handled with Vue Router.
-- State management handled with Pinia.
-- Form inputs are being sent to Firebase Cloud Firestore (currently disabled due to unnecessity)
+## Recommended IDE Setup
 
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```

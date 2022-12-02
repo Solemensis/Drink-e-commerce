@@ -1,11 +1,6 @@
 <template>
   <section>
-    <div
-      data-aos-once="true"
-      data-aos="zoom-in"
-      data-aos-duration="900"
-      class="ingredients"
-    >
+    <div class="ingredients">
       <h1>This is an ingredients page</h1>
     </div>
   </section>
@@ -21,9 +16,5 @@
   padding: 5rem 10rem;
   border-radius: 1rem;
   font-size: 2rem;
-}
-
-section {
-  height: 100vw;
 }
 </style>

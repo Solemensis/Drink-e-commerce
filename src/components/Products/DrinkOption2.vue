@@ -1,5 +1,5 @@
 <script setup>
-import { amountStore } from "../../stores/CartStore";
+import { amountStore } from "../../../stores/Stores";
 
 const decrease = function () {
   if (amountStore().can2 >= 1) amountStore().can2 = amountStore().can2 - 1;
@@ -9,7 +9,7 @@ const decrease = function () {
 <template>
   <div>
     <div class="choose">
-      <img class="option" src="../img/red.png" alt="" />
+      <img class="option" src="../../img/red.png" alt="" />
       <p class="fruit">Strawberry <br /><span>Waterfall</span></p>
 
       <div class="buttons">

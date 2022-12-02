@@ -1,8 +1,7 @@
 import { defineStore } from "pinia";
 
-export const amountStore = defineStore("product-store", {
+export const amountStore = defineStore("products", {
   state: () => ({
-    count: 0,
     can1: 0,
     can2: 0,
     can3: 0,
@@ -14,8 +13,8 @@ export const amountStore = defineStore("product-store", {
   },
 });
 
-export const boolStore = defineStore("counter2", {
+export const boolStore = defineStore("bools", {
   state: () => {
-    return { bool: false };
+    return { bool: false, bool2: false };
   },
 });

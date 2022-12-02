@@ -1,27 +1,17 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
-
-import Footer from "./components/footer.vue";
+// **** website first-load opacity animation ****
 </script>
 
 <template>
-  <Navbar />
-  <RouterView v-slot="{ Component }">
-    <!-- <transition name="fade" mode="out-in"> -->
-    <component :is="Component" />
-    <!-- </transition> -->
-  </RouterView>
-  <!-- <Footer /> -->
+  <div>
+    <Navbar />
+    <RouterView v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </RouterView>
+  </div>
 </template>
 
-<style>
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease-out;
-}
-</style>
+<style scoped></style>

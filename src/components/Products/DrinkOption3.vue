@@ -1,24 +1,24 @@
 <script setup>
-import { amountStore } from "../../stores/CartStore";
+import { amountStore } from "../../../stores/Stores";
 
 const decrease = function () {
-  if (amountStore().can4 >= 1) amountStore().can4 = amountStore().can4 - 1;
+  if (amountStore().can3 >= 1) amountStore().can3 = amountStore().can3 - 1;
 };
 </script>
 
 <template>
   <div>
     <div class="choose">
-      <img class="option" src="../img/kafein.png" alt="" />
-      <p class="fruit">++ <br /><span>Caffeine</span></p>
+      <img class="option" src="../../img/magic.png" alt="" />
+      <p class="fruit">Pure <br /><span>Magic</span></p>
 
       <div class="buttons">
         <button class="button" @click="decrease()">⊲</button>
-        <p class="amount">{{ amountStore().can4 }}</p>
+        <p class="amount">{{ amountStore().can3 }}</p>
 
         <button
           class="button"
-          @click="amountStore().can4 = amountStore().can4 + 1"
+          @click="amountStore().can3 = amountStore().can3 + 1"
         >
           ⊳
         </button>
@@ -41,7 +41,7 @@ const decrease = function () {
 .fruit {
   font-size: 2rem;
   position: absolute;
-  left: 11.5%;
+  right: 20%;
   top: 15%;
   font-weight: 500;
   text-align: center;
@@ -50,6 +50,7 @@ const decrease = function () {
 span {
   font-size: 2rem;
 }
+
 .button {
   z-index: 100;
   font-size: 1.6rem;
@@ -59,32 +60,36 @@ span {
 .option {
   position: absolute;
   height: 13rem;
-  right: 9%;
+  left: 9%;
   top: 8%;
 }
 .choose {
-  background-color: #e0660f46;
+  background-color: #8f27e45c;
   border-radius: 1rem;
   position: relative;
   height: 15rem;
   width: 20rem;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #9c501a46;
+
+  border: 1px solid #6e25aa5c;
 }
+
 .amount {
   font-size: 2.2rem;
   font-weight: 600;
 }
+
 .buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 10rem;
   position: absolute;
-  left: 8.2%;
+  right: 8.2%;
   bottom: 18%;
 }
+
 .buttons button {
   width: 2.5rem;
   height: 2.5rem;

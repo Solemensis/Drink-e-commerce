@@ -1,43 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-@font-face {
-  font-family: anan;
-  src: url("/fonts/BackToSchoolPersonalUseRegular-w1xX2.ttf");
-}
-
-/* @font-face {
-  font-family: anan2;
-  src: url("/fonts/Elianto-Regular.ttf");
-} */
-
-@font-face {
-  font-family: anan3;
-  src: url("/fonts/Stellar-Medium.otf");
-}
-
 html {
   font-size: 62.5%;
-  font-family: "Quicksand";
+  font-family: stellar;
   overflow: hidden !important;
   user-select: none;
 }
 body {
-  /* background-image: linear-gradient(to right, #ffecfd80, #ecedff98); */
-  background-color: #fff !important;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
 
-/* @media (min-width: 1920px) {
-  html {
-    font-size: 78.2% !important;
-  }
-} */
+@font-face {
+  font-family: backToSchool;
+  src: url("/fonts/BackToSchoolPersonalUseRegular-w1xX2.ttf");
+}
+@font-face {
+  font-family: stellar;
+  src: url("/fonts/Stellar-Medium.otf");
+}
 
+/* page-component transition animation: */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+/* media queries */
 @media (min-width: 2500px) {
   html {
     font-size: 110%;
@@ -103,16 +101,3 @@ body {
     font-size: 33%;
   }
 }
-
-/* @font-face {
-  font-family: myFirstFont;
-  src: url(sansation_light.woff);
-} */
-
-/* 
-
-#91dbff7d
-#91c6ff7d;
-#ffecfd98;
-background-color: #ecedff98;
-*/

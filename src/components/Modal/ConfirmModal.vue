@@ -1,15 +1,15 @@
 <script setup>
-const props = defineProps({
-  show: Boolean,
-});
+import { boolStore } from "../../../stores/Stores";
 </script>
 
 <template>
   <div>
-    <Transition name="modal">
-      <div class="container" v-if="show">
+    <Transition name="fade">
+      <div class="container" v-show="boolStore().bool2">
         <ol class="modal-content">
-          <div @click="$emit('close')" class="cancel">✘</div>
+          <div @click="boolStore().bool2 = !boolStore().bool2" class="cancel">
+            ✘
+          </div>
           <h2>Payment Was <span>Successful!</span></h2>
           <li>Products will be delivered approximately in 30-60 minutes.</li>
           <li class="last-child">
@@ -25,14 +25,13 @@ const props = defineProps({
 .container {
   transition: opacity 0.2s ease;
   position: fixed;
-  z-index: 9998;
+  z-index: 99231398;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   /*display: table;*/
-  border-radius: 2rem;
 }
 .cancel {
   position: absolute;
@@ -73,20 +72,5 @@ span {
 }
 .last-child {
   margin-bottom: 0 !important;
-}
-
-/* modal animations */
-.modal-enter-from {
-  opacity: 0;
-}
-
-.modal-leave-to {
-  opacity: 0;
-}
-
-.modal-enter-from .modal-container,
-.modal-leave-to .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
 }
 </style>

@@ -1,64 +1,55 @@
 <script setup>
-import { ref } from "vue";
-// import { db } from "../firebaseee/index.js";
+import { ref, computed } from "vue";
+// import { db } from "../firebase/index.js";
 // import { collection, addDoc } from "firebase/firestore";
-import Modal from "./ConfirmModal.vue";
-import { boolStore } from "../../stores/CartStore";
-import { amountStore } from "../../stores/CartStore";
+import ConfirmModal from "./Modal/ConfirmModal.vue";
+import { boolStore } from "../../stores/Stores";
+import { amountStore } from "../../stores/Stores";
 
-function totalAmount() {
-  return amountStore().totalPrice;
-}
+const totalPrice = computed(() => amountStore().totalPrice);
 
-const props = defineProps({
-  msg: Boolean,
-  products: Array,
-  total: Number,
-});
+// const firstName = ref("");
+// const lastName = ref("");
+// const street = ref("");
+// const postalCode = ref("");
+// const phone = ref("");
+// const mail = ref("");
+// const address = ref("");
 
-const showModal = ref(false);
+// const cardHolder = ref("");
+// const digit = ref("");
+// const expirationMM = ref("");
+// const expirationYY = ref("");
+// const cvv = ref("");
 
-const firstName = ref("");
-const lastName = ref("");
-const street = ref("");
-const postalCode = ref("");
-const phone = ref("");
-const mail = ref("");
-const address = ref("");
-
-const cardHolder = ref("");
-const digit = ref("");
-const expirationMM = ref("");
-const expirationYY = ref("");
-const cvv = ref("");
-
-function sendToFirebase() {
-  addDoc(collection(db, "orders"), {
-    Products: props.products,
-    Total: `$${props.total}.00`,
-    Address: {
-      firstName: firstName.value,
-      lastName: lastName.value,
-      street: street.value,
-      postalCode: postalCode.value,
-      phone: phone.value,
-      mail: mail.value,
-      address: address.value,
-    },
-    Payment: {
-      cardHolder: cardHolder.value,
-      digit: digit.value,
-      expirationMM: expirationMM.value,
-      expirationYY: expirationYY.value,
-      cvv: cvv.value,
-    },
-  });
-}
+// function sendToFirebase() {
+//   addDoc(collection(db, "orders"), {
+//     Products: props.products,
+//     Total: `$${props.total}.00`,
+//     Address: {
+//       firstName: firstName.value,
+//       lastName: lastName.value,
+//       street: street.value,
+//       postalCode: postalCode.value,
+//       phone: phone.value,
+//       mail: mail.value,
+//       address: address.value,
+//     },
+//     Payment: {
+//       cardHolder: cardHolder.value,
+//       digit: digit.value,
+//       expirationMM: expirationMM.value,
+//       expirationYY: expirationYY.value,
+//       cvv: cvv.value,
+//     },
+//   });
+// }
 </script>
 
 <template>
+  <ConfirmModal />
   <div class="wrap">
-    <Transition name="modal">
+    <Transition name="fade">
       <div v-show="boolStore().bool" class="window">
         <div class="flex">
           <div>
@@ -237,25 +228,17 @@ function sendToFirebase() {
           <p class="total">
             <nobr>
               Total:
-              <span class="totalspan">${{ totalAmount() }}.00</span></nobr
+              <span class="totalspan">${{ totalPrice }}.00</span></nobr
             >
           </p>
           <button
-            @click="(showModal = true), sendToFirebase()"
-            :disabled="totalAmount() === 0"
+            @click="boolStore().bool2 = !boolStore().bool2"
+            :disabled="totalPrice === 0"
             class="send"
           >
             Pay
           </button>
         </div>
-        <!-- <Teleport to="body"> -->
-        <!-- use the modal component, pass in the prop -->
-        <modal :show="showModal" @close="showModal = false">
-          <template #header>
-            <h3>custom header</h3>
-          </template>
-        </modal>
-        <!-- </Teleport> -->
       </div>
     </Transition>
   </div>
@@ -297,7 +280,7 @@ function sendToFirebase() {
     font-size: 2rem !important;
     margin-bottom: 0.5rem !important;
     right: 14.5rem !important;
-    padding: 0.2rem 0.5rem !important;
+    padding: 1rem 2rem !important;
   }
   .send {
     right: 4rem !important;
@@ -343,17 +326,17 @@ function sendToFirebase() {
   z-index: 9999999999999999999999999;
 }
 * {
-  font-family: "DynaPuff";
+  font-family: stellar;
   font-weight: 300 !important;
 }
 .total {
   font-size: 3rem;
   position: absolute;
-  bottom: 3rem;
-  right: 19rem;
+  bottom: 3.2rem;
+  right: 20.2rem;
   border-bottom: 2px orangered solid;
 
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
 }
 totalspan {
   font-weight: 600;
@@ -635,7 +618,6 @@ input:focus {
   text-align: center;
   margin-bottom: 3.6rem;
   width: 39rem;
-  font-family: anan3;
   font-weight: 300;
 }
 .window {
@@ -652,21 +634,5 @@ input:focus {
   transform: translate(-50%, -50%);
   transition: 0.3s;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-/* animations */
-
-.modal-enter-from {
-  opacity: 0;
-}
-
-.modal-leave-to {
-  opacity: 0;
-}
-
-.modal-enter-from .modal-container,
-.modal-leave-to .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
 }
 </style>

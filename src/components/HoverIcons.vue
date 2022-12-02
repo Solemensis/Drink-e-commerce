@@ -1,7 +1,7 @@
 <script setup>
-import Modal from "./Modal.vue";
-import Modal2 from "./Modal2.vue";
-import Modal3 from "./Modal3.vue";
+import Modal1 from "./Modal/HiddenModal1.vue";
+import Modal2 from "./Modal/HiddenModal2.vue";
+import Modal3 from "./Modal/HiddenModal3.vue";
 import { ref } from "vue";
 
 const showModal1 = ref(false);
@@ -12,12 +12,7 @@ const showModal3 = ref(false);
 <template>
   <div class="relative">
     <div>
-      <div
-        data-aos-once="true"
-        data-aos="zoom-in"
-        data-aos-duration="1200"
-        class="section-class"
-      >
+      <div class="section-class">
         <div class="box">
           <img class="blob" src="../img/blob.png" alt="" />
           <img
@@ -26,7 +21,7 @@ const showModal3 = ref(false);
             src="../img/1.png"
           />
           <transition name="fade" mode="out-in">
-            <Modal class="modal" v-show="showModal1" />
+            <Modal1 class="modal1" v-show="showModal1" />
           </transition>
         </div>
 
@@ -106,7 +101,7 @@ img {
   height: 9rem;
 }
 
-.modal {
+.modal1 {
   position: absolute;
   right: 12rem;
   top: -15%;

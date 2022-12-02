@@ -1,13 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
-import GeneralWrapper from "../views/GeneralWrapper.vue";
+import index from "../views/index.vue";
+import ingredients from "../views/ingredients.vue";
+import contact from "../views/contact.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
-      component: GeneralWrapper,
+      name: "index",
+      component: index,
     },
     {
       path: "/ingredients",
@@ -15,7 +17,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("../views/IngredientsView.vue"),
+      // component: () => import("../views/ingredients.vue"),
+      component: ingredients,
     },
     {
       path: "/contact",
@@ -23,7 +26,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("../views/ContactView.vue"),
+      // component: () => import("../views/ingredients.vue"),
+      component: contact,
     },
   ],
 });

@@ -1,12 +1,9 @@
 <script setup>
-import { amountStore } from "../../stores/CartStore";
-import { boolStore } from "../../stores/CartStore";
+import { amountStore } from "../../stores/Stores";
+import { boolStore } from "../../stores/Stores";
 import { computed } from "vue";
-function totalAmount() {
-  return amountStore().totalPrice;
-}
 
-const cartAmount = computed(() => totalAmount() / 2);
+const cartAmount = computed(() => amountStore().totalPrice / 2);
 </script>
 
 <template>
@@ -51,6 +48,7 @@ ul {
   font-size: 2rem;
   text-decoration: none;
   color: black;
+  padding-bottom: 0.5rem !important;
 }
 
 .logo {
@@ -118,6 +116,5 @@ h3 {
 
 a.router-link-active {
   border-bottom: 1px solid red;
-  padding-bottom: 2px;
 }
 </style>
