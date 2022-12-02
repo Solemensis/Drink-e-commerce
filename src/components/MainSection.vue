@@ -61,9 +61,9 @@ const totalPrice = computed(() => amountStore().totalPrice);
 @media (orientation: portrait) {
   .main-section {
     flex-direction: column;
-    top: 50%;
+    top: 52%;
     left: 50% !important;
-    gap: 10rem;
+    gap: 4rem;
   }
   .main-hero {
     border: none !important;
