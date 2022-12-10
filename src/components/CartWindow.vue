@@ -325,14 +325,11 @@ const totalPrice = computed(() => amountStore().totalPrice);
 .wrap {
   z-index: 9999999999999999999999999;
 }
-* {
-  font-family: stellar;
-  font-weight: 300 !important;
-}
+
 .total {
   font-size: 3rem;
   position: absolute;
-  bottom: 3.2rem;
+  bottom: 2rem;
   right: 20.2rem;
   border-bottom: 2px orangered solid;
 
@@ -361,7 +358,7 @@ totalspan {
 .send {
   position: absolute;
   right: 7rem;
-  bottom: 3.5rem;
+  bottom: 2.7rem;
   /*bottom: 2rem; */
   padding: 1rem 3rem;
   background-color: rgb(228, 49, 145);
@@ -586,12 +583,13 @@ form {
 input {
   margin-bottom: 2.5rem;
   width: 15rem;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   border: 1px black solid;
   padding: 0.2rem;
   border-radius: 0.4rem;
   outline: none;
   transition: 0.2s;
+  font-family: "Patrick Hand";
 }
 input:focus {
   border: 1px rgb(247, 140, 25) solid;
@@ -616,9 +614,10 @@ input:focus {
   font-size: 4.5rem;
   color: rgb(248, 62, 62);
   text-align: center;
-  margin-bottom: 3.6rem;
+  margin-bottom: 2rem;
   width: 39rem;
   font-weight: 300;
+  font-family: "Patrick Hand";
 }
 .window {
   height: 50rem;
