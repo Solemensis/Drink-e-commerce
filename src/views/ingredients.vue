@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="ingredients">
-      <h1>This is an ingredients page</h1>
+      <h2>This is an ingredients page</h2>
     </div>
   </section>
 </template>
