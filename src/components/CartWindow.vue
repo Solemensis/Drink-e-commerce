@@ -1,7 +1,5 @@
 <script setup>
 import { ref, computed } from "vue";
-// import { db } from "../firebase/index.js";
-// import { collection, addDoc } from "firebase/firestore";
 import ConfirmModal from "./Modal/ConfirmModal.vue";
 import { boolStore } from "../../stores/Stores";
 import { amountStore } from "../../stores/Stores";
