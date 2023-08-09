@@ -26,7 +26,11 @@ const totalPrice = computed(() => amountStore().totalPrice);
           Total :
           <span class="color-span-3">${{ totalPrice }}.00</span>
         </h3>
-        <button @click="boolStore().bool = !boolStore().bool">Checkout</button>
+        <button
+          @click="boolStore().showCartWindow = !boolStore().showCartWindow"
+        >
+          Checkout
+        </button>
       </div>
     </div>
 

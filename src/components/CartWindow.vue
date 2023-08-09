@@ -48,7 +48,7 @@ const totalPrice = computed(() => amountStore().totalPrice);
   <ConfirmModal />
   <div class="wrap">
     <Transition name="fade">
-      <div v-show="boolStore().bool" class="window">
+      <div v-show="boolStore().showCartWindow" class="window">
         <div class="flex">
           <div>
             <h2>Cart Summary</h2>
@@ -157,7 +157,9 @@ const totalPrice = computed(() => amountStore().totalPrice);
           <div>
             <h2 class="address-heading">Address</h2>
 
-            <div @click="boolStore().bool = false" class="cancel">✘</div>
+            <div @click="boolStore().showCartWindow = false" class="cancel">
+              ✘
+            </div>
 
             <form action="" method="get">
               <div>
@@ -230,7 +232,9 @@ const totalPrice = computed(() => amountStore().totalPrice);
             >
           </p>
           <button
-            @click="boolStore().bool2 = !boolStore().bool2"
+            @click="
+              boolStore().showSuccessWindow = !boolStore().showSuccessWindow
+            "
             :disabled="totalPrice === 0"
             class="send"
           >

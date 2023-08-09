@@ -14,7 +14,7 @@ const cartAmount = computed(() => amountStore().totalPrice / 2);
     <!-- <img class="blob" src="../img/blob.png" alt="" /> -->
     <h3>{{ cartAmount }}</h3>
     <img
-      @click="boolStore().bool = !boolStore().bool"
+      @click="boolStore().showCartWindow = !boolStore().showCartWindow"
       class="basket"
       src="../ico/cart2.svg"
       alt=""

@@ -5,9 +5,14 @@ import { boolStore } from "../../../stores/Stores";
 <template>
   <div>
     <Transition name="fade">
-      <div class="container" v-show="boolStore().bool2">
+      <div class="container" v-show="boolStore().showSuccessWindow">
         <ol class="modal-content">
-          <div @click="boolStore().bool2 = !boolStore().bool2" class="cancel">
+          <div
+            @click="
+              boolStore().showSuccessWindow = !boolStore().showSuccessWindow
+            "
+            class="cancel"
+          >
             ✘
           </div>
           <h2>Payment Was <span>Successful!</span></h2>

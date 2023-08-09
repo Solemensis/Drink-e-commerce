@@ -15,6 +15,6 @@ export const amountStore = defineStore("products", {
 
 export const boolStore = defineStore("bools", {
   state: () => {
-    return { bool: false, bool2: false };
+    return { showCartWindow: false, showSuccessWindow: false };
   },
 });
