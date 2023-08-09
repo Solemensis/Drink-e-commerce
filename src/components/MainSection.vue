@@ -1,11 +1,14 @@
 <script setup>
-import DrinkOption1 from "./Products/DrinkOption1.vue";
-import DrinkOption2 from "./Products/DrinkOption2.vue";
-import DrinkOption3 from "./Products/DrinkOption3.vue";
-import DrinkOption4 from "./Products/DrinkOption4.vue";
+import DrinkProduct from "./Products/DrinkProduct.vue";
+
 import { amountStore } from "../../stores/Stores";
 import { boolStore } from "../../stores/Stores";
 import { computed } from "vue";
+
+import productImg1 from "../assets/green.png";
+import productImg2 from "../assets/red.png";
+import productImg3 from "../assets/magic.png";
+import productImg4 from "../assets/kafein.png";
 
 const totalPrice = computed(() => amountStore().totalPrice);
 </script>
@@ -35,10 +38,37 @@ const totalPrice = computed(() => amountStore().totalPrice);
     </div>
 
     <div class="main-products-grid">
-      <DrinkOption1 />
-      <DrinkOption2 />
+      <DrinkProduct
+        product="can1"
+        productName="Melon"
+        productNameExtra="Tree"
+        :productImg="productImg1"
+        bgColor="#2cdd235d"
+      />
+      <DrinkProduct
+        product="can2"
+        productName="Red"
+        productNameExtra="Power"
+        :productImg="productImg2"
+        bgColor="#cb27aa5e"
+      />
+      <DrinkProduct
+        product="can3"
+        productName="Pure"
+        productNameExtra="Magic"
+        :productImg="productImg3"
+        bgColor="#8f27e45c"
+      />
+      <DrinkProduct
+        product="can4"
+        productName="Boost"
+        productNameExtra="NRG"
+        :productImg="productImg4"
+        bgColor="#e0660f46"
+      />
+      <!-- <DrinkOption2 />
       <DrinkOption3 />
-      <DrinkOption4 />
+      <DrinkOption4 /> -->
       <img class="products-background-shapes" src="../img/spline.png" alt="" />
     </div>
     <img class="spiral" src="../img/spiral.webp" />

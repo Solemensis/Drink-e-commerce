@@ -1,25 +1,39 @@
 <script setup>
 import { amountStore } from "../../../stores/Stores";
+import { defineProps } from "vue";
 
-const decrease = function () {
-  if (amountStore().can2 >= 1) amountStore().can2 = amountStore().can2 - 1;
-};
+const props = defineProps({
+  product: Number,
+  productName: String,
+  productNameExtra: String,
+  productImg: String,
+  bgColor: String,
+});
 </script>
 
 <template>
   <div>
-    <div class="choose">
-      <img class="option" src="../../img/red.png" alt="" />
-      <p class="fruit">Strawberry <br /><span>Waterfall</span></p>
+    <div class="choose" :style="`background-color: ${bgColor}`">
+      <img class="option" :src="productImg" alt="" />
+      <p class="fruit">
+        {{ productName }}<br /><span>{{ productNameExtra }}</span>
+      </p>
 
       <div class="buttons">
-        <button class="button" @click="decrease()">⊲</button>
-        <p class="amount">{{ amountStore().can2 }}</p>
-
         <button
           class="button"
-          @click="amountStore().can2 = amountStore().can2 + 1"
+          @click="
+            () =>
+              amountStore()[product] <= 0
+                ? (amountStore()[product] = 0)
+                : amountStore()[product]--
+          "
         >
+          ⊲
+        </button>
+        <p class="amount">{{ amountStore()[product] }}</p>
+
+        <button class="button" @click="() => amountStore()[product]++">
           ⊳
         </button>
       </div>
@@ -37,18 +51,18 @@ const decrease = function () {
   font-family: "DynaPuff";
   font-weight: 300 !important;
 }
-
 .fruit {
-  font-size: 1.8rem;
+  font-size: 2rem;
   position: absolute;
-  left: 7%;
-  top: 16%;
+  right: 20%;
+  top: 15%;
   font-weight: 500;
   text-align: center;
   line-height: 1.2;
 }
+
 span {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 .button {
   z-index: 100;
@@ -59,32 +73,35 @@ span {
 .option {
   position: absolute;
   height: 13rem;
-  right: 9%;
+  left: 9%;
   top: 8%;
 }
 .choose {
-  background-color: #cb27aa5e;
+  /* background-color: #2cdd235d; */
   border-radius: 1rem;
   position: relative;
   height: 15rem;
   width: 20rem;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #91217a5e;
+  border: 1px solid #229a1c5d;
 }
+
 .amount {
   font-size: 2.2rem;
   font-weight: 600;
 }
+
 .buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 10rem;
   position: absolute;
-  left: 8.2%;
+  right: 8.2%;
   bottom: 18%;
 }
+
 .buttons button {
   width: 2.5rem;
   height: 2.5rem;
@@ -94,12 +111,12 @@ span {
   transition: 0.1s;
   z-index: 9999999999;
 }
+
 @media (hover: hover) {
   .buttons button:hover {
     background-color: #9f119f;
   }
 }
-
 .buttons button:active {
   background-color: #851185;
 }

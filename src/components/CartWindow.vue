@@ -6,19 +6,19 @@ import { amountStore } from "../../stores/Stores";
 
 const totalPrice = computed(() => amountStore().totalPrice);
 
-// const firstName = ref("");
-// const lastName = ref("");
-// const street = ref("");
-// const postalCode = ref("");
-// const phone = ref("");
-// const mail = ref("");
-// const address = ref("");
+const firstName = ref("");
+const lastName = ref("");
+const street = ref("");
+const postalCode = ref("");
+const phone = ref("");
+const mail = ref("");
+const address = ref("");
 
-// const cardHolder = ref("");
-// const digit = ref("");
-// const expirationMM = ref("");
-// const expirationYY = ref("");
-// const cvv = ref("");
+const cardHolder = ref("");
+const digit = ref("");
+const expirationMM = ref("");
+const expirationYY = ref("");
+const cvv = ref("");
 
 // function sendToFirebase() {
 //   addDoc(collection(db, "orders"), {
@@ -61,7 +61,7 @@ const totalPrice = computed(() => amountStore().totalPrice);
               </div>
               <div class="red">
                 <p>
-                  <span>Strawberry Waterfall</span>
+                  <span>Red Power</span>
                   <span>{{ amountStore().can2 }}</span>
                 </p>
               </div>
@@ -73,7 +73,7 @@ const totalPrice = computed(() => amountStore().totalPrice);
               </div>
               <div class="brown">
                 <p>
-                  <span>++ Caffeine</span>
+                  <span>Boost NRG</span>
                   <span>{{ amountStore().can4 }}</span>
                 </p>
               </div>
