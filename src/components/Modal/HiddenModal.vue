@@ -1,13 +1,18 @@
-<script setup></script>
+<script setup>
+import { defineProps } from "vue";
+
+const props = defineProps({
+  heading: String,
+  content: String,
+});
+</script>
 
 <template>
   <div>
     <Transition name="modal">
-      <div class="wrapper">
-        <div class="group">
-          <h4>Heading 2</h4>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-        </div>
+      <div class="group">
+        <h4>{{ heading }}</h4>
+        <p>{{ content }}</p>
         <div id="triangle-right"></div>
       </div>
     </Transition>
@@ -15,20 +20,19 @@
 </template>
 
 <style scoped>
-.wrapper {
-  transition: 0.2s;
-}
 .group {
   background-color: #2eaa2727;
   padding: 1.5rem 1rem;
   border-radius: 1rem;
+  position: relative;
 }
 #triangle-right {
   position: absolute;
-  top: 5.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   right: -2.4rem;
   border-top: 1rem solid transparent;
-  border-left: 2.4rem solid #2eaa2727;
+  border-left: 2.5rem solid #2eaa2727;
   border-bottom: 1rem solid transparent;
 }
 

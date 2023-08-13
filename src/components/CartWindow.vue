@@ -1,248 +1,244 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, reactive } from "vue";
 import ConfirmModal from "./Modal/ConfirmModal.vue";
 import { boolStore } from "../../stores/Stores";
 import { amountStore } from "../../stores/Stores";
 
 const totalPrice = computed(() => amountStore().totalPrice);
 
-const firstName = ref("");
-const lastName = ref("");
-const street = ref("");
-const postalCode = ref("");
-const phone = ref("");
-const mail = ref("");
-const address = ref("");
+const buyerCredentials = reactive({
+  //buyer
+  firstName: "",
+  lastName: "",
+  street: "",
+  postalCode: "",
+  phone: "",
+  mail: "",
+  address: "",
 
-const cardHolder = ref("");
-const digit = ref("");
-const expirationMM = ref("");
-const expirationYY = ref("");
-const cvv = ref("");
+  //credit card
+  cardHolder: "",
+  digit: "",
+  expMM: "",
+  expYY: "",
+  cvv: "",
+});
 
 // function sendToFirebase() {
 //   addDoc(collection(db, "orders"), {
-//     Products: props.products,
-//     Total: `$${props.total}.00`,
-//     Address: {
-//       firstName: firstName.value,
-//       lastName: lastName.value,
-//       street: street.value,
-//       postalCode: postalCode.value,
-//       phone: phone.value,
-//       mail: mail.value,
-//       address: address.value,
-//     },
-//     Payment: {
-//       cardHolder: cardHolder.value,
-//       digit: digit.value,
-//       expirationMM: expirationMM.value,
-//       expirationYY: expirationYY.value,
-//       cvv: cvv.value,
-//     },
+//     // code was deleted as i paused my firebase projects
 //   });
 // }
 </script>
 
 <template>
-  <ConfirmModal />
-  <div class="wrap">
-    <Transition name="fade">
-      <div v-show="boolStore().showCartWindow" class="window">
-        <div class="flex">
-          <div>
-            <h2>Cart Summary</h2>
-            <div class="object">
-              <div class="green">
-                <p>
-                  <span>Melon Tree</span>
-                  <span>{{ amountStore().can1 }}</span>
-                </p>
+  <div>
+    <ConfirmModal />
+    <div class="wrap">
+      <Transition name="fade">
+        <div v-show="boolStore().showCartWindow" class="window">
+          <div class="flex">
+            <div>
+              <h2>Cart Summary</h2>
+              <div class="object">
+                <div class="green">
+                  <p>
+                    <span>Melon Tree</span>
+                    <span>{{ amountStore().can1 }}</span>
+                  </p>
+                </div>
+                <div class="red">
+                  <p>
+                    <span>Red Power</span>
+                    <span>{{ amountStore().can2 }}</span>
+                  </p>
+                </div>
+                <div class="purple">
+                  <p>
+                    <span>Pure Magic</span>
+                    <span>{{ amountStore().can3 }}</span>
+                  </p>
+                </div>
+                <div class="brown">
+                  <p>
+                    <span>Boost NRG</span>
+                    <span>{{ amountStore().can4 }}</span>
+                  </p>
+                </div>
               </div>
-              <div class="red">
-                <p>
-                  <span>Red Power</span>
-                  <span>{{ amountStore().can2 }}</span>
-                </p>
-              </div>
-              <div class="purple">
-                <p>
-                  <span>Pure Magic</span>
-                  <span>{{ amountStore().can3 }}</span>
-                </p>
-              </div>
-              <div class="brown">
-                <p>
-                  <span>Boost NRG</span>
-                  <span>{{ amountStore().can4 }}</span>
-                </p>
-              </div>
-            </div>
-            <div class="credit-card">
-              <div class="front">
-                <input
-                  v-model="cardHolder"
-                  class="card-holder-name"
-                  placeholder="Card Holder Name"
-                  type="text"
-                  required
-                />
-                <div class="flex2">
+              <div class="credit-card">
+                <div class="front">
                   <input
-                    disabled="true"
-                    class="xxxx"
-                    placeholder="****"
+                    v-model="buyerCredentials.cardHolder"
+                    class="card-holder-name"
+                    placeholder="Card Holder Name"
                     type="text"
                     required
                   />
+
+                  <div class="flex2">
+                    <input
+                      disabled="true"
+                      class="xxxx"
+                      placeholder="****"
+                      type="text"
+                      required
+                    />
+                    <input
+                      disabled="true"
+                      class="xxxx"
+                      placeholder="****"
+                      type="password"
+                      required
+                    />
+                    <input
+                      disabled="true"
+                      class="xxxx"
+                      placeholder="****"
+                      type="password"
+                      required
+                    />
+                    <input
+                      v-model="digit"
+                      class="xxxx"
+                      placeholder="****"
+                      type="number"
+                      maxlength="4"
+                      required
+                      disabled="true"
+                    />
+                  </div>
+
+                  <div class="flex3">
+                    <input
+                      v-model="buyerCredentials.expMM"
+                      class="tarih"
+                      placeholder="MM"
+                      type="number"
+                      maxlength="2"
+                      required
+                    />
+                    <input
+                      v-model="buyerCredentials.expYY"
+                      class="tarih"
+                      placeholder="YY"
+                      type="number"
+                      maxlength="2"
+                      required
+                    />
+                  </div>
+                  <img class="cc-icon" src="../img/cc-icon.png" />
+                </div>
+                <div class="back">
                   <input
-                    disabled="true"
-                    class="xxxx"
-                    placeholder="****"
+                    v-model="buyerCredentials.cvv"
+                    class="cvv"
+                    placeholder="cvv"
                     type="password"
                     required
                   />
-                  <input
-                    disabled="true"
-                    class="xxxx"
-                    placeholder="****"
-                    type="password"
-                    required
-                  />
-                  <input
-                    v-model="digit"
-                    class="xxxx"
-                    placeholder="****"
-                    type="number"
-                    maxlength="4"
-                    required
-                    disabled="true"
-                  />
                 </div>
+              </div>
+            </div>
+            <div class="seperater"></div>
+            <div>
+              <h2 class="address-heading">Address</h2>
 
-                <div class="flex3">
+              <div @click="boolStore().showCartWindow = false" class="cancel">
+                ✘
+              </div>
+
+              <form action="" method="get">
+                <div>
                   <input
-                    v-model="expirationMM"
-                    class="tarih"
-                    placeholder="MM"
-                    type="number"
-                    maxlength="2"
-                    required
-                  />
-                  <p>&nbsp;&nbsp;/&nbsp;&nbsp;</p>
-                  <input
-                    v-model="expirationYY"
-                    class="tarih"
-                    placeholder="YY"
-                    type="number"
-                    maxlength="2"
+                    v-model="buyerCredentials.firstName"
+                    placeholder="First Name"
+                    type="text"
                     required
                   />
                 </div>
-                <img class="cc-icon" src="../img/cc-icon.png" />
-              </div>
-              <div class="back">
-                <div class="stripe"></div>
-                <input
-                  v-model="cvv"
-                  class="cvv"
-                  placeholder="cvv"
-                  type="password"
-                  required
-                />
-              </div>
+                <div>
+                  <input
+                    v-model="buyerCredentials.lastName"
+                    placeholder="Last Name"
+                    type="text"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <input
+                    placeholder="USA"
+                    type="text"
+                    disabled="true"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    placeholder="NYC"
+                    type="text"
+                    disabled="true"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    v-model="buyerCredentials.street"
+                    placeholder="Street"
+                    type="text"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    v-model="buyerCredentials.postalCode"
+                    placeholder="Postal Code"
+                    type="text"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <input
+                    v-model="buyerCredentials.phone"
+                    placeholder="Phone"
+                    type="number"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    v-model="buyerCredentials.mail"
+                    placeholder="E-mail"
+                    type="email"
+                    required
+                  />
+                </div>
+                <textarea
+                  v-model="buyerCredentials.address"
+                  placeholder="Address"
+                  class="textarea"
+                ></textarea>
+              </form>
             </div>
-          </div>
-          <div class="seperater"></div>
-          <div>
-            <h2 class="address-heading">Address</h2>
-
-            <div @click="boolStore().showCartWindow = false" class="cancel">
-              ✘
-            </div>
-
-            <form action="" method="get">
-              <div>
-                <input
-                  v-model="firstName"
-                  placeholder="First Name"
-                  type="text"
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  v-model="lastName"
-                  placeholder="Last Name"
-                  type="text"
-                  required
-                />
-              </div>
-
-              <div>
-                <input placeholder="USA" type="text" disabled="true" required />
-              </div>
-              <div>
-                <input placeholder="NYC" type="text" disabled="true" required />
-              </div>
-              <div>
-                <input
-                  v-model="street"
-                  placeholder="Street"
-                  type="text"
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  v-model="postalCode"
-                  placeholder="Postal Code"
-                  type="text"
-                  required
-                />
-              </div>
-
-              <div>
-                <input
-                  v-model="phone"
-                  placeholder="Phone"
-                  type="number"
-                  required
-                />
-              </div>
-              <div>
-                <input
-                  v-model="mail"
-                  placeholder="E-mail"
-                  type="email"
-                  required
-                />
-              </div>
-              <textarea
-                v-model="address"
-                placeholder="Address"
-                class="textarea"
-              ></textarea>
-            </form>
-          </div>
-          <p class="total">
-            <nobr>
+            <p class="total">
               Total:
-              <span class="totalspan">${{ totalPrice }}.00</span></nobr
+              <span class="totalspan">${{ totalPrice }}.00</span>
+            </p>
+            <button
+              @click="
+                boolStore().showSuccessWindow = !boolStore().showSuccessWindow
+              "
+              :disabled="totalPrice === 0"
+              class="send"
             >
-          </p>
-          <button
-            @click="
-              boolStore().showSuccessWindow = !boolStore().showSuccessWindow
-            "
-            :disabled="totalPrice === 0"
-            class="send"
-          >
-            Pay
-          </button>
+              Pay
+            </button>
+          </div>
         </div>
-      </div>
-    </Transition>
+      </Transition>
+    </div>
   </div>
 </template>
 
@@ -421,7 +417,7 @@ totalspan {
 
 .flex3 {
   display: flex;
-
+  gap: 1rem;
   position: absolute;
   left: 2rem;
   bottom: -0.35rem;
@@ -537,14 +533,6 @@ input[type="number"] {
   bottom: 2rem;
   border: 1px solid black;
   z-index: -1;
-}
-.stripe {
-  /* background-color: #272727; */
-  width: 10rem;
-  height: 3.5rem;
-  position: absolute;
-  right: 0;
-  top: 2.5rem;
 }
 
 .cancel {

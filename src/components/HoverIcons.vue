@@ -1,7 +1,6 @@
 <script setup>
-import Modal1 from "./Modal/HiddenModal1.vue";
-import Modal2 from "./Modal/HiddenModal2.vue";
-import Modal3 from "./Modal/HiddenModal3.vue";
+import Modal from "./Modal/HiddenModal.vue";
+
 import { ref } from "vue";
 
 const showModal1 = ref(false);
@@ -21,7 +20,12 @@ const showModal3 = ref(false);
             src="../img/1.png"
           />
           <transition name="fade" mode="out-in">
-            <Modal1 class="modal1" v-show="showModal1" />
+            <Modal
+              heading="Heading 1"
+              content="Lorem, ipsum dolor sit amet consectetur adipisicing."
+              class="modal1"
+              v-show="showModal1"
+            />
           </transition>
         </div>
 
@@ -33,7 +37,12 @@ const showModal3 = ref(false);
             src="../img/2.png"
           />
           <transition name="fade" mode="out-in">
-            <Modal2 class="modal2" v-show="showModal2" />
+            <Modal
+              heading="Heading 2"
+              content="Lorem, ipsum dolor sit amet consectetur adipisicing."
+              class="modal2"
+              v-show="showModal2"
+            />
           </transition>
         </div>
         <div class="box">
@@ -44,7 +53,12 @@ const showModal3 = ref(false);
             src="../img/3.png"
           />
           <transition name="fade" mode="out-in">
-            <Modal3 class="modal3" v-show="showModal3" />
+            <Modal
+              heading="Heading 3"
+              content="Lorem, ipsum dolor sit amet consectetur adipisicing."
+              class="modal3"
+              v-show="showModal3"
+            />
           </transition>
         </div>
       </div>

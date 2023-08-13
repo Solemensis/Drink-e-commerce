@@ -3,7 +3,7 @@ import { amountStore } from "../../../stores/Stores";
 import { defineProps } from "vue";
 
 const props = defineProps({
-  product: Number,
+  product: String,
   productName: String,
   productNameExtra: String,
   productImg: String,

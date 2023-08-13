@@ -66,9 +66,7 @@ const totalPrice = computed(() => amountStore().totalPrice);
         :productImg="productImg4"
         bgColor="#e0660f46"
       />
-      <!-- <DrinkOption2 />
-      <DrinkOption3 />
-      <DrinkOption4 /> -->
+
       <img class="products-background-shapes" src="../img/spline.png" alt="" />
     </div>
     <img class="spiral" src="../img/spiral.webp" />

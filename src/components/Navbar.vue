@@ -9,9 +9,6 @@ const cartAmount = computed(() => amountStore().totalPrice / 2);
 <template>
   <div>
     <img class="logo" src="../img/logo.png" alt="" />
-
-    <!-- <img class="qm" src="../img/question-mark.svg" alt="" /> -->
-    <!-- <img class="blob" src="../img/blob.png" alt="" /> -->
     <h3>{{ cartAmount }}</h3>
     <img
       @click="boolStore().showCartWindow = !boolStore().showCartWindow"
@@ -22,9 +19,7 @@ const cartAmount = computed(() => amountStore().totalPrice / 2);
 
     <ul>
       <li><RouterLink class="li" to="/">Home</RouterLink></li>
-      <!-- <li>Shop</li> -->
       <li><RouterLink class="li" to="/ingredients">Ingredients</RouterLink></li>
-
       <li><RouterLink class="li" to="/contact">Contact</RouterLink></li>
     </ul>
   </div>
