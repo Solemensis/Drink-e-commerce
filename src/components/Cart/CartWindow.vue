@@ -1,8 +1,8 @@
 <script setup>
 import { ref, computed, reactive } from "vue";
-import ConfirmModal from "./Modal/ConfirmModal.vue";
-import { boolStore } from "../../stores/Stores";
-import { amountStore } from "../../stores/Stores";
+import ConfirmModal from "../Modal/ConfirmModal.vue";
+import { boolStore } from "../../../stores/Stores";
+import { amountStore } from "../../../stores/Stores";
 
 const totalPrice = computed(() => amountStore().totalPrice);
 
@@ -127,7 +127,11 @@ const buyerCredentials = reactive({
                       required
                     />
                   </div>
-                  <img class="cc-icon" src="../img/cc-icon.png" />
+                  <img
+                    class="cc-icon"
+                    src="@/img/cc-icon.png"
+                    alt="credit card icon"
+                  />
                 </div>
                 <div class="back">
                   <input

@@ -1,5 +1,5 @@
 <script setup>
-import Modal from "./Modal/HiddenModal.vue";
+import Modal from "../Modal/HiddenModal.vue";
 
 import { ref } from "vue";
 
@@ -13,11 +13,12 @@ const showModal3 = ref(false);
     <div>
       <div class="section-class">
         <div class="box">
-          <img class="blob" src="../img/blob.png" alt="" />
+          <img class="blob" src="@/img/blob.png" alt="blob image" />
           <img
             @mouseenter="showModal1 = true"
             @mouseleave="showModal1 = false"
-            src="../img/1.png"
+            src="@/img/1.png"
+            alt="informative image"
           />
           <transition name="fade" mode="out-in">
             <Modal
@@ -30,11 +31,12 @@ const showModal3 = ref(false);
         </div>
 
         <div class="box">
-          <img class="blob2" src="../img/blob.png" alt="" />
+          <img class="blob2" src="@/img/blob.png" alt="blob image" />
           <img
             @mouseenter="showModal2 = true"
             @mouseleave="showModal2 = false"
-            src="../img/2.png"
+            src="@/img/2.png"
+            alt="informative image"
           />
           <transition name="fade" mode="out-in">
             <Modal
@@ -46,11 +48,12 @@ const showModal3 = ref(false);
           </transition>
         </div>
         <div class="box">
-          <img class="blob3" src="../img/blob.png" alt="" />
+          <img class="blob3" src="@/img/blob.png" alt="blob image" />
           <img
             @mouseenter="showModal3 = true"
             @mouseleave="showModal3 = false"
-            src="../img/3.png"
+            src="@/img/3.png"
+            alt="informative image"
           />
           <transition name="fade" mode="out-in">
             <Modal

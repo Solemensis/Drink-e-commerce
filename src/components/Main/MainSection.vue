@@ -1,14 +1,14 @@
 <script setup>
-import DrinkProduct from "./Products/DrinkProduct.vue";
+import DrinkProduct from "../Products/DrinkProduct.vue";
 
-import { amountStore } from "../../stores/Stores";
-import { boolStore } from "../../stores/Stores";
+import { amountStore } from "../../../stores/Stores";
+import { boolStore } from "../../../stores/Stores";
 import { computed } from "vue";
 
-import productImg1 from "../assets/green.png";
-import productImg2 from "../assets/red.png";
-import productImg3 from "../assets/magic.png";
-import productImg4 from "../assets/kafein.png";
+import productImg1 from "@/assets/green.png";
+import productImg2 from "@/assets/red.png";
+import productImg3 from "@/assets/magic.png";
+import productImg4 from "@/assets/kafein.png";
 
 const totalPrice = computed(() => amountStore().totalPrice);
 </script>
@@ -67,9 +67,13 @@ const totalPrice = computed(() => amountStore().totalPrice);
         bgColor="#e0660f46"
       />
 
-      <img class="products-background-shapes" src="../img/spline.png" alt="" />
+      <img
+        class="products-background-shapes"
+        src="@/img/spline.png"
+        alt="rounded background shapes"
+      />
     </div>
-    <img class="spiral" src="../img/spiral.webp" />
+    <img class="spiral" src="@/img/spiral.webp" alt="spiral image" />
   </section>
 </template>
 
@@ -165,7 +169,7 @@ const totalPrice = computed(() => amountStore().totalPrice);
 .main-pricing button::before {
   content: "";
   position: absolute;
-  background: url("../ico/etiket.svg") no-repeat;
+  background: url("../../ico/etiket.svg") no-repeat;
   height: 3.5rem;
   width: 3.5rem;
   background-size: 3.5rem;

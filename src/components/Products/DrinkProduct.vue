@@ -14,7 +14,7 @@ const props = defineProps({
 <template>
   <div>
     <div class="choose" :style="`background-color: ${bgColor}`">
-      <img class="option" :src="productImg" alt="" />
+      <img class="option" :src="productImg" alt="product image" />
       <p class="fruit">
         {{ productName }}<br /><span>{{ productNameExtra }}</span>
       </p>

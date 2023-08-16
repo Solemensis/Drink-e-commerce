@@ -8,13 +8,13 @@ const cartAmount = computed(() => amountStore().totalPrice / 2);
 
 <template>
   <div>
-    <img class="logo" src="../img/logo.png" alt="" />
+    <img class="logo" src="@/img/logo.png" alt="drink-e-commerce logo" />
     <h3>{{ cartAmount }}</h3>
     <img
       @click="boolStore().showCartWindow = !boolStore().showCartWindow"
       class="basket"
-      src="../ico/cart2.svg"
-      alt=""
+      src="@/ico/cart2.svg"
+      alt="cart icon"
     />
 
     <ul>

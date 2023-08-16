@@ -1,6 +1,6 @@
 <script setup>
 import Navbar from "./components/Navbar.vue";
-import CartWindow from "./components/CartWindow.vue";
+import CartWindow from "./components/Cart/CartWindow.vue";
 </script>
 
 <template>
