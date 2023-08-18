@@ -94,49 +94,7 @@ const totalPrice = computed(() => amountStore().totalPrice);
   top: 54%;
   transform: translate(-50%, -50%);
 }
-@media (orientation: portrait) {
-  .main-section {
-    flex-direction: column;
-    top: 52%;
-    left: 50% !important;
-    gap: 4rem;
-  }
-  .main-hero {
-    border: none !important;
-  }
-  .main-text-box {
-    width: max-content !important;
-  }
-  .big-text {
-    text-align: center;
-    font-size: 10.5rem !important;
-    line-height: 7rem !important;
-    margin-bottom: 2.5rem !important;
-  }
-  .mid-text {
-    text-align: center;
-    font-size: 4.3rem !important;
-    margin-bottom: 1rem !important;
-  }
-  .small-text {
-    width: max-content !important;
-    margin-inline: auto;
-    margin-bottom: 4rem !important;
-    font-size: 2.9rem !important;
-    color: #bbb !important;
-  }
-  .main-pricing {
-    width: max-content !important;
-    margin-inline: auto;
-  }
-  .spiral {
-    display: none;
-  }
-  .main-pricing button {
-    font-size: 2.3rem !important;
-    width: 100% !important;
-  }
-}
+
 .main-hero {
   padding: 2.5rem;
   border-left: 3px rgb(144, 26, 223) solid;
@@ -228,14 +186,14 @@ img {
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
-  height: 35rem;
-  width: 45rem;
+  gap: 2rem;
   position: relative;
 }
 .products-background-shapes {
   position: absolute;
-  left: -16%;
-  top: -20%;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%); */
   height: 47rem;
   width: 65rem;
   z-index: -9999999999999999999999;
@@ -247,6 +205,51 @@ img {
   }
   100% {
     transform: translateY(1rem);
+  }
+}
+
+@media (orientation: portrait) {
+  .main-section {
+    flex-direction: column;
+    top: 50%;
+    left: 50% !important;
+    gap: 4rem;
+    transform: translate(-50%, -50%);
+  }
+  .main-hero {
+    border: none !important;
+  }
+  .main-text-box {
+    width: max-content !important;
+  }
+  .big-text {
+    text-align: center;
+    font-size: clamp(9rem, 8vh, 15rem);
+    line-height: clamp(7rem, 7vh, 13rem);
+    margin-bottom: 2.5rem !important;
+  }
+  .mid-text {
+    text-align: center;
+    font-size: 4.3rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .small-text {
+    width: max-content !important;
+    margin-inline: auto;
+    margin-bottom: 4rem !important;
+    font-size: 2.9rem !important;
+    color: #bbb !important;
+  }
+  .main-pricing {
+    width: max-content !important;
+    margin-inline: auto;
+  }
+  .spiral {
+    display: none;
+  }
+  .main-pricing button {
+    font-size: 2.3rem !important;
+    width: 100% !important;
   }
 }
 </style>

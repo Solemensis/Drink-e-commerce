@@ -15,54 +15,49 @@ const props = defineProps({
   <div>
     <div class="choose" :style="`background-color: ${bgColor}`">
       <img class="option" :src="productImg" alt="product image" />
-      <p class="fruit">
-        {{ productName }}<br /><span>{{ productNameExtra }}</span>
-      </p>
+      <div class="product-name-and-buttons">
+        <p class="fruit">
+          {{ productName }}<br /><span>{{ productNameExtra }}</span>
+        </p>
 
-      <div class="buttons">
-        <button
-          class="button"
-          @click="
-            () =>
-              amountStore()[product] <= 0
-                ? (amountStore()[product] = 0)
-                : amountStore()[product]--
-          "
-        >
-          ⊲
-        </button>
-        <p class="amount">{{ amountStore()[product] }}</p>
+        <div class="buttons">
+          <button
+            class="button"
+            @click="
+              () =>
+                amountStore()[product] <= 0
+                  ? (amountStore()[product] = 0)
+                  : amountStore()[product]--
+            "
+          >
+            ⊲
+          </button>
+          <p class="amount">{{ amountStore()[product] }}</p>
 
-        <button class="button" @click="() => amountStore()[product]++">
-          ⊳
-        </button>
+          <button class="button" @click="() => amountStore()[product]++">
+            ⊳
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-@media (orientation: portrait) {
-  .button {
-    font-size: 1.8rem !important;
-  }
-}
 * {
   font-family: "DynaPuff";
   font-weight: 300 !important;
 }
 .fruit {
-  font-size: 2rem;
-  position: absolute;
-  right: 20%;
-  top: 15%;
+  font-size: clamp(2rem, 1.5vh, 2.6rem);
+
   font-weight: 500;
   text-align: center;
   line-height: 1.2;
 }
 
 span {
-  font-size: 2rem;
+  font-size: clamp(2rem, 1.5vh, 2.6rem);
 }
 .button {
   z-index: 100;
@@ -71,20 +66,19 @@ span {
 }
 
 .option {
-  position: absolute;
-  height: 13rem;
-  left: 9%;
-  top: 8%;
+  height: 80%;
 }
 .choose {
-  /* background-color: #2cdd235d; */
   border-radius: 1rem;
   position: relative;
   height: 15rem;
   width: 20rem;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: 1px solid #229a1c5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .amount {
@@ -97,19 +91,15 @@ span {
   justify-content: space-between;
   align-items: center;
   width: 10rem;
-  position: absolute;
-  right: 8.2%;
-  bottom: 18%;
 }
 
 .buttons button {
-  width: 2.5rem;
-  height: 2.5rem;
   border: none;
   background-color: #c009c0;
   border-radius: 22rem;
   transition: 0.1s;
   z-index: 9999999999;
+  padding: 0.5rem;
 }
 
 @media (hover: hover) {
@@ -129,5 +119,34 @@ span {
 }
 .up-arrow {
   transform: rotate(270deg);
+}
+.product-name-and-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (orientation: portrait) {
+  .amount {
+    font-size: 2.7rem;
+  }
+  .buttons {
+    gap: 1rem;
+  }
+  .button {
+    font-size: 2rem !important;
+  }
+  .fruit {
+    font-size: 2.3rem;
+  }
+  span {
+    font-size: 2.3rem;
+  }
+
+  /* .choose {
+    height: clamp(15rem, 15vh, 20rem);
+    width: clamp(20rem, 15vh, 30rem);
+  } */
 }
 </style>
