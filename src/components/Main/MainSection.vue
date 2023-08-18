@@ -215,6 +215,7 @@ img {
     left: 50% !important;
     gap: 4rem;
     transform: translate(-50%, -50%);
+    max-height: 90vh;
   }
   .main-hero {
     border: none !important;
@@ -244,6 +245,7 @@ img {
     width: max-content !important;
     margin-inline: auto;
   }
+
   .spiral {
     display: none;
   }
